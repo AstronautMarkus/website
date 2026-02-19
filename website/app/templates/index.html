@@ -1,0 +1,196 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="page" id="top">
+  <header class="top-banner">
+    <div class="banner-glass">
+      <div class="banner-strip">
+        <div class="banner-photo"></div>
+      </div>
+      <div class="banner-text">
+        <p class="banner-sub">No Tailwind, No CSS Frameworks (Only 7.css), Just Pure CSS!1</p>
+        <h1>AstronautMarkus.Dev</h1>
+        <p class="banner-tag">"Take the chance, Take the dream, Take the world"</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <div class="main-content">
+      <section class="glass-panel" id="main">
+        <div class="post">
+          <div class="post-header">
+            <span class="badge">Main</span>
+            <h2>whoami</h2>
+            <p class="meta">Full Stack Developer · Linux Enthusiast · System Administrator</p>
+          </div>
+          <p>
+            Hello, world. My name is Marcos Reyes, but you can call me Markus. I'm a passionate Full Stack Developer
+            and System Administrator with a love for aero and modern web technologies. <br>
+            I specialize in the LAMP web stack, but I'm always eager to explore new tools and frameworks. I have a
+            knack for creating efficient, scalable, and secure web applications that blend functionality with
+            aesthetics. <br>
+            When I'm not coding, probably tinkering with my Home Lab, driving my truck, or listening to high BPM
+            music. <br>
+            I like cats, I like coffee, coffeine is my best friend. <br>
+            I hate NVIDIA and their proprietary drivers, but I love Linux and AMD hardware. <br>
+            Welcome to my personal blog, where I share my projects, thoughts, and experiences in the world of web
+            development and system administration. Feel free to explore and connect with me!
+          </p>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="glass-panel" id="techstack">
+        <div class="post">
+          <div class="post-header">
+            <span class="badge">Tech Stack</span>
+            <h2>cat /usr/bin/markus/techstack.txt</h2>
+          </div>
+          <ul class="list">
+            <li><strong>Frontend:</strong> React, Tailwind CSS, Vue, Astro, Maybe Vanilla HTML CSS & JS for fun</li>
+            <li><strong>Backend:</strong> Laravel, PHP, Python, Flask, FastAPI, I fucking hate NodeJS and JavaScript
+              on the backend, =( </li>
+            <li><strong>DevOps:</strong> Linux, Docker, Docker Compose, Nginx, Git, Bash, Vim, Nano, tmux</li>
+            <li><strong>Databases:</strong> MariaDB, MySQL, SQLite </li>
+            <li><strong>Other Tools:</strong> Redis, Arduino IDE</li>
+          </ul>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="glass-panel" id="portfolio">
+        <div class="post">
+          <div class="post-header">
+            <span class="badge">Portfolio</span>
+            <h2>cat /usr/bin/markus/portfolio.txt</h2>
+          </div>
+          <div id="projects-list" class="projects-scrollable"></div>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="glass-panel" id="blog">
+        <div class="post">
+          <div class="post-header">
+            <span class="badge">Blog</span>
+            <h2>wget /blog/data/posts.json</h2>
+          </div>
+          <ul class="list">
+            There are no blog posts yet, but stay tuned for updates!
+          </ul>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="glass-panel" id="gallery">
+        <div class="post">
+          <div class="post-header">
+            <span class="badge">Gallery</span>
+            <h2>ls /usr/bin/markus/gallery</h2>
+            <p class="meta">Click on the thumbnails to view the full-size images.</p>
+          </div>
+          <div class="gallery-grid">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_1981.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_1981.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_2422.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_2422.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_2741.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_2741.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_2967.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_2967.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_3309.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_3309.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_3596.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_3596.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_3642.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_3642.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_4023.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_4023.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_4122.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_4122.jpeg') }}">
+            <img class="gallery-thumb" src="{{ url_for('static', filename='gallery/IMG_4135.jpeg') }}"
+              data-full="{{ url_for('static', filename='gallery/IMG_4135.jpeg') }}">
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side">
+      <div class="glass-panel mini" id="about">
+        <h3>About</h3>
+        <p>I'm a Full Stack Developer and System Administrator with a passion for retro aesthetics and modern web
+          technologies. I enjoy creating nostalgic digital experiences that blend the best of both worlds.</p>
+      </div>
+      <div class="glass-panel mini" id="player">
+        <h3>Mini player</h3>
+        <iframe data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/03OXOTX3VQyHLpQMb0lVwW?utm_source=generator" width="100%"
+          height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="glass-panel mini" id="visits">
+        <div class="win7">
+          <div class="window active" style="max-width: 500px">
+            <div class="title-bar">
+              <div class="title-bar-text">Visits</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <img
+                src="https://count.getloli.com/@astronautmarkusdev?name=astronautmarkusdev&theme=booru-jaypee&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-panel mini" id="messages">
+        <h3>Anonymous Notes</h3>
+        <div class="win7">
+          <div class="window active">
+            <div class="title-bar">
+              <div class="title-bar-text">Write a Message</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <form>
+                <textarea name="message" rows="3" placeholder="Write your message..." required
+                  style="width:100%; resize: vertical;" disabled></textarea><br>
+                <button type="submit" style="width:100%; margin-top:0.5em;" disabled>Send</button>
+              </form>
+              <p style="color:#888; margin-top:1em;">Disabled messages form since this is a static site.</p>
+            </div>
+          </div>
+        </div>
+        <div class="win7" style="margin-top:1em;">
+          <div class="window active">
+            <div class="title-bar">
+              <div class="title-bar-text">Messages</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <ul style="max-height:400px;overflow-y:auto;padding-left:0;">
+                <li style="margin-bottom:0.5em; color:#888;">No messages available in static mode.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  </main>
+</div>
+
+<div class="gallery-modal" id="gallery-modal" style="display:none;">
+  <div class="gallery-modal-bg" id="gallery-modal-bg"></div>
+  <img class="gallery-modal-img" id="gallery-modal-img" src="" alt="Full Size Image">
+  <button class="gallery-modal-close" id="gallery-modal-close" aria-label="Cerrar">×</button>
+</div>
+{% endblock %}

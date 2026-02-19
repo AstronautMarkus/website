@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>{% block title %}AstronautMarkusDev | Full Stack Developer & Linux Enthusiast{% endblock %}</title>
+	<meta name="description" content="{% block description %}Personal blog of Marcos Reyes (AstronautMarkusDev), Full Stack Developer, Linux Enthusiast and System Administrator. Projects, experiences, technology, retro and more.{% endblock %}" />
+	<meta name="keywords" content="{% block keywords %}Marcos Reyes, AstronautMarkusDev, Full Stack Developer, Linux, System Administrator, Portfolio, Blog, Web Development, Retro, Tech Stack, LAMP, PHP, Python, Docker, Nginx, MariaDB, MySQL, AMD, Home Lab, Coffee, Cats{% endblock %}" />
+	<meta name="author" content="Marcos Reyes" />
+	<meta name="robots" content="index, follow" />
+	<meta name="theme-color" content="#5BBBDE" />
+	<link rel="canonical" href="https://astronautmarkus.dev/" />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://astronautmarkus.dev/" />
+	<meta property="og:title" content="AstronautMarkusDev | Full Stack Developer & Linux Enthusiast" />
+	<meta property="og:description" content="Personal blog of Marcos Reyes (AstronautMarkusDev), Full Stack Developer, Linux Enthusiast and System Administrator. Projects, experiences, technology, retro and more." />
+	<meta property="og:image" content="{{ url_for('static', filename='img/og-image.jpg') }}" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content="https://astronautmarkus.dev/" />
+	<meta name="twitter:title" content="AstronautMarkusDev | Full Stack Developer & Linux Enthusiast" />
+	<meta name="twitter:description" content="Personal blog of Marcos Reyes (AstronautMarkusDev), Full Stack Developer, Linux Enthusiast and System Administrator. Projects, experiences, technology, retro and more." />
+	<meta name="twitter:image" content="{{ url_for('static', filename='img/og-image.jpg') }}" />
+
+	<link rel="image_src" href="{{ url_for('static', filename='img/og-image.jpg') }}" />
+
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png') }}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}" />
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}" />
+	<link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}" />
+
+	<link rel="stylesheet" href="https://unpkg.com/7.css/dist/7.scoped.css">
+
+	<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Marcos Reyes",
+				"alternateName": "AstronautMarkusDev",
+				"url": "https://astronautmarkus.dev/",
+				"image": "{{ url_for('static', filename='img/og-image.jpg') }}",
+				"jobTitle": "Full Stack Developer, System Administrator",
+				"sameAs": [
+					"https://github.com/AstronautMarkus",
+					"https://twitter.com/AstronautMarkus",
+					"https://linkedin.com/in/marcosreyes"
+				]
+			}
+		</script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+	<script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+	{% block extra_head %}{% endblock %}
+</head>
+
+<body>
+	<div class="background"></div>
+	<div class="noise"></div>
+    {% include 'layout/components/sidebar.html' %}
+	{% block content %}{% endblock %}
+	
+  <footer class="footer">
+    <span>&copy; 2026 AstronautMarkusDev. All rights reserved.</span>
+  </footer>
+</body>
+
+</html>
