@@ -1,0 +1,249 @@
+.frutiger-aero-button {
+    --hue: 0;
+    --sat: 0;
+    --glow-intensity: 0.7;
+
+    --fg: #222;
+    --bg: rgba(255, 255, 255, 0.7);
+    --bg-dark: rgba(220, 220, 220, 0.7);
+    --bottom-glow: radial-gradient(farthest-corner at bottom center,
+            rgba(255, 255, 255, var(--glow-intensity)),
+            transparent);
+
+    background-color: var(--bg);
+    background:
+        var(--bottom-glow),
+        linear-gradient(to bottom, var(--bg-dark), var(--bg));
+
+    border: 1px solid var(--bg);
+    border-radius: 9999px;
+
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+
+    color: var(--fg);
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Segoe UI", system-ui, sans-serif;
+    font-weight: 700;
+    text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+    position: relative;
+    transition: all 300ms ease;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.frutiger-aero-button.primary {
+    --hue: 140;
+    --sat: 0.26;
+    --fg: oklch(15% calc(var(--sat) * 0.5) var(--hue));
+    --bg: oklch(75% var(--sat) var(--hue) / 0.8);
+    --bg-dark: oklch(45% var(--sat) var(--hue) / 0.75);
+}
+
+.frutiger-aero-button.secondary {
+    --hue: 240;
+    --sat: 0.22;
+    --fg: oklch(18% calc(var(--sat) * 0.6) var(--hue));
+    --bg: oklch(75% var(--sat) var(--hue) / 0.8);
+    --bg-dark: oklch(45% var(--sat) var(--hue) / 0.75);
+}
+
+.frutiger-aero-button::after {
+    content: "";
+    position: absolute;
+    top: 4%;
+    left: 0.75em;
+    width: calc(100% - 1.5em);
+    height: 40%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.1));
+    border-radius: inherit;
+    transition: background 400ms ease;
+    pointer-events: none;
+}
+
+.frutiger-aero-button:hover,
+.frutiger-aero-button:focus {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+.frutiger-aero-button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transform: translateY(1px);
+}
+
+.frutiger-aero-button.small {
+    padding: 0.5em 1.5em;
+    font-size: 0.875rem;
+}
+
+.frutiger-aero-button.medium {
+    padding: 0.75em 2em;
+    font-size: 1rem;
+}
+
+.frutiger-aero-button.large {
+    padding: 1em 3em;
+    font-size: 1.125rem;
+}
+
+.header-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.85), rgba(141, 224, 255, 0.22));
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 18px rgba(10, 35, 56, 0.18);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+.header-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.9), rgba(141, 224, 255, 0.5)),
+        radial-gradient(circle at 30% 30%, #ffe3f3, transparent 60%);
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.header-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #204052;
+}
+
+.header-links {
+    display: flex;
+    gap: 12px;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        padding: 8px 4px;
+        width: 100%;
+        text-align: center;
+    }
+    .header-sticky {
+        text-align: center;
+    }
+    .header-title {
+        margin: 0 8px 0 0;
+        flex: 0 0 auto;
+        text-align: center;
+        width: 100%;
+    }
+    .header-links {
+        justify-content: center;
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .header-avatar {
+        display: none;
+    }
+    .header-title {
+        font-size: 1rem;
+        margin-right: 8px;
+    }
+    .header-links {
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 4px;
+        max-height: none;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .header-links button {
+        width: auto;
+        min-width: 0;
+        max-width: 80px;
+        padding: 0.25em 0.5em;
+        font-size: 0.75rem;
+        margin: 0 2px;
+    }
+}
+
+.header-link {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #204052;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.header-link.active,
+.header-link:active {
+    background: linear-gradient(120deg, #3a8bfd 80%, #0c5e7c 100%);
+    color: #fff;
+    box-shadow: 0 0 12px 2px rgba(58, 139, 253, 0.18);
+    border: 2px solid #3a8bfd;
+}
+
+.header-link:hover {
+    background: rgba(58, 139, 253, 0.976);
+    color: #0c5e7c;
+}
+
+@media (max-width: 960px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 8px;
+    }
+
+    .header-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .header-title {
+        font-size: 1rem;
+    }
+
+    .header-links {
+        gap: 8px;
+    }
+}

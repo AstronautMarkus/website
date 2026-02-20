@@ -1,3 +1,7 @@
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+{% endblock %}
+
 <header class="header-sticky" aria-label="Site">
     <div class="header-content">
         <div class="header-avatar">
@@ -5,7 +9,8 @@
         </div>
         <div class="header-title">AstronautMarkusDev</div>
         <nav class="header-links">
-            <a class="header-link{% if request.path == url_for('home.index') %} active{% endif %}" href="{{ url_for('home.index') }}">Home</a>
+            <button class="frutiger-aero-button medium primary">Home</button>
+            <button class="frutiger-aero-button small secondary">About</button>
         </nav>
     </div>
 </header>
