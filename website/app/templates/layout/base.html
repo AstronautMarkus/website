@@ -58,12 +58,49 @@
 <body>
 	<div class="background"></div>
 	<div class="noise"></div>
-    {% include 'layout/components/sidebar.html' %}
-	{% block content %}{% endblock %}
-	
-  <footer class="footer">
-    <span>&copy; 2026 AstronautMarkusDev. All rights reserved.</span>
-  </footer>
+		{% include 'layout/components/sidebar.html' %}
+
+		{# Soporte para mensajes flash #}
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				<div class="flash-messages">
+					{% for category, message in messages %}
+						<div class="flash flash-{{ category }}">{{ message }}</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endwith %}
+
+		{% block content %}{% endblock %}
+
+	<footer class="footer">
+		<span>&copy; 2026 AstronautMarkusDev. All rights reserved.</span>
+	</footer>
+	<style>
+		.flash-messages {
+			position: fixed;
+			top: 1.5em;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 9999;
+			width: 90vw;
+			max-width: 600px;
+		}
+		.flash {
+			padding: 1em 1.5em;
+			margin-bottom: 0.5em;
+			border-radius: 6px;
+			font-weight: bold;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+			font-size: 1.1em;
+			text-align: center;
+			opacity: 0.97;
+		}
+		.flash-success { background: #d4edda; color: #155724; border: 1px solid #b2dfbb; }
+		.flash-error, .flash-danger { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+		.flash-warning { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+		.flash-info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+	</style>
 </body>
 
 </html>

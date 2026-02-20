@@ -7,11 +7,6 @@
       <div class="banner-strip">
         <div class="banner-photo"></div>
       </div>
-      <div class="banner-text">
-        <p class="banner-sub">No Tailwind, No CSS Frameworks (Only 7.css), Just Pure CSS!1</p>
-        <h1>AstronautMarkus.Dev</h1>
-        <p class="banner-tag">"Take the chance, Take the dream, Take the world"</p>
-      </div>
     </div>
   </header>
 
@@ -127,7 +122,7 @@
       </div>
       <div class="glass-panel mini" id="visits">
         <div class="win7">
-          <div class="window active" style="max-width: 500px">
+          <div class="window active" style="max-width: 500px; width: 350px;">
             <div class="title-bar">
               <div class="title-bar-text">Visits</div>
               <div class="title-bar-controls">
@@ -138,7 +133,8 @@
             </div>
             <div class="window-body has-space">
               <img
-                src="https://count.getloli.com/@astronautmarkusdev?name=astronautmarkusdev&theme=booru-jaypee&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto">
+                src="https://count.getloli.com/@astronautmarkusdev?name=astronautmarkusdev&theme=booru-jaypee&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto"
+                style="max-width: 100%; height: auto;">
             </div>
           </div>
         </div>
@@ -156,12 +152,54 @@
               </div>
             </div>
             <div class="window-body has-space">
-              <form>
-                <textarea name="message" rows="3" placeholder="Write your message..." required
-                  style="width:100%; resize: vertical;" disabled></textarea><br>
-                <button type="submit" style="width:100%; margin-top:0.5em;" disabled>Send</button>
+              <form method="POST" action="{{ url_for('home.post_note') }}">
+                <input type="text" name="username" id="username" placeholder="Your name..."
+                  style="width:100%; padding:0.5em; margin-bottom:0.5em; border-radius:3px; border:1px solid #ccc;">
+                <div style="margin-bottom:0.5em;">
+                  <input type="checkbox" id="anonymous" name="anonymous" onclick="toggleUsernameField()">
+                  <label for="anonymous">Anonymous</label>
+                </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                {% if category == 'error_username' %}
+                <div style="color:#b30000; font-size:0.95em; margin-bottom:0.5em;">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+                {% endwith %}
+                <textarea name="content" rows="3" placeholder="Write your message..." required
+                  style="width:100%; padding:0.5em; resize:vertical; border-radius:3px; border:1px solid #ccc;"></textarea><br>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                {% if category == 'error_content' %}
+                <div style="color:#b30000; font-size:0.95em; margin-bottom:0.5em;">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+                {% endwith %}
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                {% if category == 'error' %}
+                <div style="color:#b30000; font-size:1em; margin:0.5em 0;">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+                {% endwith %}
+
+                <button type="submit"
+                  style="width:100%; margin-top:0.5em; padding:0.5em; border-radius:3px; border:1px solid #999; background-color:#dfdfdf; cursor:pointer;">Send</button>
+                <input type="hidden" name="_method" value="POST">
+                <script>
+                  function toggleUsernameField() {
+                    const checkbox = document.getElementById('anonymous');
+                    const usernameInput = document.getElementById('username');
+                    if (checkbox.checked) {
+                      usernameInput.disabled = true;
+                      usernameInput.value = '';
+                    } else {
+                      usernameInput.disabled = false;
+                    }
+                  }
+                </script>
               </form>
-              <p style="color:#888; margin-top:1em;">Disabled messages form since this is a static site.</p>
             </div>
           </div>
         </div>
@@ -177,7 +215,17 @@
             </div>
             <div class="window-body has-space">
               <ul style="max-height:400px;overflow-y:auto;padding-left:0;">
-                <li style="margin-bottom:0.5em; color:#888;">No messages available in static mode.</li>
+                {% for note in notes %}
+                <li style="margin-bottom:1em; list-style:none; background-color:#f0f0f0; border-radius:5px;">
+                  <strong>{{ note.username }}</strong>: {{ note.content }}
+                </li>
+                {% else %}
+                <li style="display:flex; align-items:center; gap:0.5em;">
+                  <img src="{{ url_for('static', filename='/img/icons/vista_info.ico')}}" alt=""
+                    style="width:auto; height:32px; flex-shrink:0;">
+                  <span>No messages yet.</span>
+                </li>
+                {% endfor %}
               </ul>
             </div>
           </div>

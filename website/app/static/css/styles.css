@@ -296,7 +296,7 @@ background: url("../img/bg.jpg") center/cover;
 }
 
 .banner-glass {
-  max-width: 1080px;
+  max-width: 80rem;
   margin: 0 auto;
   border-radius: 24px;
   border: 1px solid var(--border);
