@@ -1,0 +1,116 @@
+[
+    {
+        "title": "ESP8266 Labs",
+        "description": "Project with ESP8266, Arduino and C++.",
+        "project_url": "https://github.com/AstronautMarkus/ESP8266-Labs",
+        "tags": ["Arduino", "C++"]
+    },
+    {
+        "title": "TurnoMaster",
+        "description": "Shift management system with React, TailwindCSS, Laravel, MySQL, Chart.js and Axios.",
+        "project_url": null,
+        "tags": ["React", "TailwindCSS", "Laravel", "MySQL", "Chart.js", "Axios"]
+    },
+    {
+        "title": "FumoIndex",
+        "description": "Smoke indexer with React, TypeScript, Laravel, MySQL and Tailwind CSS.",
+        "project_url": "https://github.com/astronautmarkus/fumoindex",
+        "tags": ["React", "TypeScript", "Laravel", "MySQL", "Tailwind CSS"]
+    },
+    {
+        "title": "AbbyBot Project",
+        "description": "Discord bot in Python and MySQL.",
+        "project_url": "https://github.com/AbbyBot/Discord-AbbyBot",
+        "tags": ["Discord.py", "Python", "MySQL"]
+    },
+    {
+        "title": "Blog AstronautMarkus",
+        "description": "Personal blog with Laravel, Blade, Tailwind CSS, MySQL and PHP.",
+        "project_url": "https://github.com/AstronautMarkus/blog.astronautmarkus.dev",
+        "tags": ["Laravel", "Blade", "Tailwind CSS", "MySQL", "PHP"]
+    },
+    {
+        "title": "AbbyBot Project Website",
+        "description": "Website for AbbyBot using Flask, Python, Bootstrap, MySQL, Gunicorn and Docker.",
+        "project_url": "https://github.com/AbbyBot/AbbyBot-Website",
+        "tags": ["Flask", "Python", "Bootstrap", "MySQL", "Gunicorn", "Docker"]
+    },
+    {
+        "title": "Multi Stock Sync",
+        "description": "Stock synchronization with React, Node.js, Bootstrap, Chart.js and Axios.",
+        "project_url": "https://github.com/AstronautMarkus/Multi-Stock-Sync",
+        "tags": ["React", "Node.js", "Bootstrap", "Chart.js", "Axios"]
+    },
+    {
+        "title": "Multi Stock Sync Back",
+        "description": "Backend for Multi Stock Sync with Laravel, Sanctum, MySQL and PHP.",
+        "project_url": "https://github.com/AstronautMarkus/Multi-Stock-Sync-Back",
+        "tags": ["Laravel", "Sanctum", "MySQL", "PHP"]
+    },
+    {
+        "title": "Multi Stock Sync API Viewer",
+        "description": "API viewer for Multi Stock Sync using Laravel and Swagger.",
+        "project_url": "https://github.com/AstronautMarkus/Multi-Stock-API-Viewer",
+        "tags": ["Laravel", "Swagger"]
+    },
+    {
+        "title": "MofuStore",
+        "description": "Online store with Python, Django, Bootstrap and MySQL.",
+        "project_url": null,
+        "tags": ["Python", "Django", "Bootstrap", "MySQL"]
+    },
+    {
+        "title": "CamellosFood Repartidor",
+        "description": "Delivery driver app with Ionic, Angular and Django.",
+        "project_url": "https://github.com/AstronautMarkus/CamellosFood-Repartidor-3.0",
+        "tags": ["Ionic", "Angular", "Django"]
+    },
+    {
+        "title": "Constru MIC",
+        "description": "Construction management system with Django, Bootstrap and MySQL.",
+        "project_url": "https://github.com/MarcosKingsDuoc/CONSTRU_MIC",
+        "tags": ["Django", "Bootstrap", "MySQL"]
+    },
+    {
+        "title": "MofuLunches Web",
+        "description": "Website for MofuLunches using Flask and Bootstrap.",
+        "project_url": "https://github.com/AstronautMarkus/MofuLunches-Web",
+        "tags": ["Flask", "Bootstrap"]
+    },
+    {
+        "title": "MofuLunches API",
+        "description": "API for MofuLunches with Python, Flask and MongoDB.",
+        "project_url": "https://github.com/AstronautMarkus/MofuLunches-API",
+        "tags": ["Python", "Flask", "MongoDB"]
+    },
+    {
+        "title": "MofuLunches Totem",
+        "description": "Interactive kiosk for MofuLunches using Electron, Arduino and React.",
+        "project_url": "https://github.com/AstronautMarkus/MofuLunches-Totem",
+        "tags": ["Electron", "Arduino", "React"]
+    },
+    {
+        "title": "MofuLunches ElDimon",
+        "description": "ElDimon project with Arduino and C++.",
+        "project_url": "https://github.com/AstronautMarkus/MofuLunches-ElDimon",
+        "tags": ["Arduino", "C++"]
+    },
+    {
+        "title": "MofuLunches ElDimon Listener",
+        "description": "Listener for ElDimon using Python and PyQt5.",
+        "project_url": "https://github.com/AstronautMarkus/MofuLunches-ElDimon_Listener",
+        "tags": ["Python", "PyQt5"]
+    },
+    {
+        "title": "ReyesAndFriends App",
+        "description": "App for ReyesAndFriends with React, Tailwind CSS, Flask, Docker and MySQL.",
+        "project_url": "https://github.com/reyesandfriends/reyesandfriends-app",
+        "tags": ["React", "Tailwind CSS", "Flask", "Docker", "MySQL"]
+    },
+    {
+        "title": "ReyesHosting",
+        "description": "Hosting platform with Laravel, Tailwind CSS, Livewire and MySQL.",
+        "project_url": null,
+        "tags": ["Laravel", "Tailwind CSS", "Livewire", "MySQL"]
+    }
+]

@@ -488,8 +488,6 @@ blockquote {
 
 .divider {
   margin: 26px 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
 }
 
 .side {
