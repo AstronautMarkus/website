@@ -39,7 +39,19 @@ def post_note():
                     flash(msg, 'error')
             return redirect(url_for('home.index'))
 
-    new_note = Note(content=content.strip(), username=username.strip())
+    # Random colors
+    color_choices = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'gray']
+    color = random.choice(color_choices)
+
+    # Client IP address
+    ip_address = request.remote_addr or '0.0.0.0'
+
+    new_note = Note(
+        content=content.strip(),
+        username=username.strip(),
+        color=color,
+        ip_address=ip_address
+    )
     try:
         db.session.add(new_note)
         db.session.commit()

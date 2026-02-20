@@ -213,11 +213,11 @@
                 <button aria-label="Close"></button>
               </div>
             </div>
-            <div class="window-body has-space" style="height:200px; overflow-y:auto;">
+            <div class="window-body has-space" style="max-height:150px; overflow-y:auto;">
               <ul style="padding-left:0; margin:0;">
               {% for note in notes %}
               <li style="list-style:none; border-radius:5px; padding:0.5em;">
-                <strong>{{ note.username }}</strong>: {{ note.content }}
+                <strong style="color: {{ note.color }}">{{ note.username }}</strong>: {{ note.content }}
               </li>
               {% else %}
               <li style="display:flex; align-items:center; gap:0.5em;">
