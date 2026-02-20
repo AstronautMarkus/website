@@ -173,12 +173,7 @@ body {
   overflow-x: hidden;
 }
 
-.page {
-  padding-left: clamp(210px, 20vw, var(--sidebar-width));
-}
-
-
-/* Header sticky refactor for sidebar */
+ /* Header sticky refactor for sidebar */
 .header-sticky {
   position: sticky;
   top: 0;
