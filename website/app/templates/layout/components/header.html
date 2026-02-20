@@ -1,0 +1,11 @@
+<header class="header-sticky" aria-label="Site">
+    <div class="header-content">
+        <div class="header-avatar">
+            <img src="{{ url_for('static', filename='img/icon.png') }}" alt="AstronautMarkus Avatar" />
+        </div>
+        <div class="header-title">AstronautMarkusDev</div>
+        <nav class="header-links">
+            <a class="header-link{% if request.path == url_for('home.index') %} active{% endif %}" href="{{ url_for('home.index') }}">Home</a>
+        </nav>
+    </div>
+</header>
