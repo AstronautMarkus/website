@@ -144,7 +144,7 @@
         <div class="win7">
           <div class="window active">
             <div class="title-bar">
-              <div class="title-bar-text">Write a Message</div>
+              <div class="title-bar-text">Write a Note</div>
               <div class="title-bar-controls">
                 <button aria-label="Minimize"></button>
                 <button aria-label="Maximize"></button>
@@ -206,26 +206,26 @@
         <div class="win7" style="margin-top:1em;">
           <div class="window active">
             <div class="title-bar">
-              <div class="title-bar-text">Messages</div>
+              <div class="title-bar-text">Notes</div>
               <div class="title-bar-controls">
                 <button aria-label="Minimize"></button>
                 <button aria-label="Maximize"></button>
                 <button aria-label="Close"></button>
               </div>
             </div>
-            <div class="window-body has-space">
-              <ul style="max-height:400px;overflow-y:auto;padding-left:0;">
-                {% for note in notes %}
-                <li style="margin-bottom:1em; list-style:none; background-color:#f0f0f0; border-radius:5px;">
-                  <strong>{{ note.username }}</strong>: {{ note.content }}
-                </li>
-                {% else %}
-                <li style="display:flex; align-items:center; gap:0.5em;">
-                  <img src="{{ url_for('static', filename='/img/icons/vista_info.ico')}}" alt=""
-                    style="width:auto; height:32px; flex-shrink:0;">
-                  <span>No messages yet.</span>
-                </li>
-                {% endfor %}
+            <div class="window-body has-space" style="height:200px; overflow-y:auto;">
+              <ul style="padding-left:0; margin:0;">
+              {% for note in notes %}
+              <li style="list-style:none; border-radius:5px; padding:0.5em;">
+                <strong>{{ note.username }}</strong>: {{ note.content }}
+              </li>
+              {% else %}
+              <li style="display:flex; align-items:center; gap:0.5em;">
+                <img src="{{ url_for('static', filename='/img/icons/vista_info.ico')}}" alt=""
+                style="width:auto; height:32px; flex-shrink:0;">
+                <span>No notes yet.</span>
+              </li>
+              {% endfor %}
               </ul>
             </div>
           </div>
