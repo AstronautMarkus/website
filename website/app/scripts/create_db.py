@@ -7,13 +7,29 @@ sys.path.insert(0, project_root)
 from app import create_app
 from app.models.models import db
 
+import json
+from app.models.models import TechStack
+
+def load_techstack_data():
+    json_path = os.path.join(os.path.dirname(__file__), 'techstack_data.json')
+    with open(json_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
 def init_database():
-    """Initialize the database by creating tables."""
+    """Initialize the database by creating tables and inserting tech stack data."""
     app = create_app()
     with app.app_context():
         print("Creating tables...")
         db.create_all()
         print("Tables created successfully")
+        # Insert tech stack data
+        techstack_data = load_techstack_data()
+        for item in techstack_data:
+            exists = TechStack.query.filter_by(name=item['name'], type=item['type']).first()
+            if not exists:
+                db.session.add(TechStack(**item))
+        db.session.commit()
+        print("Tech stack data inserted.")
 
 def reset_database():
     """Delete all tables and recreate them."""

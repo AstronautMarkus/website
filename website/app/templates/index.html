@@ -25,9 +25,9 @@
             I specialize in the LAMP web stack, but I'm always eager to explore new tools and frameworks. I have a
             knack for creating efficient, scalable, and secure web applications that blend functionality with
             aesthetics. <br>
-            When I'm not coding, probably tinkering with my Home Lab, driving my truck, or listening to high BPM
+            When I'm not coding, I'm probably tinkering with my Home Lab, driving my truck, or listening to high BPM
             music. <br>
-            I like cats, I like coffee, coffeine is my best friend. <br>
+            I like cats, I like coffee, caffeine is my best friend. <br>
             I hate NVIDIA and their proprietary drivers, but I love Linux and AMD hardware. <br>
             Welcome to my personal blog, where I share my projects, thoughts, and experiences in the world of web
             development and system administration. Feel free to explore and connect with me!
@@ -72,7 +72,6 @@
                       good understanding of
                       accessibility best practices and strive to create inclusive web experiences for all users.
                     </p>
-
                     <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
                       <table style="min-width: 100%;">
                         <thead>
@@ -83,75 +82,28 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for item in techstack if item.type == 'Front End' %}
                           <tr>
-                            <td><strong>React</strong></td>
-                            <td>Library</td>
-                            <td>Good! I love the DIY approach it offers.</td>
+                            <td><strong>{{ item.name }}</strong></td>
+                            <td>{{ item.tech_type }}</td>
+                            <td>{{ item.opinion }}</td>
                           </tr>
-                          <tr>
-                            <td><strong>Vue.js</strong></td>
-                            <td>Framework</td>
-                            <td>Also good! Very easy for beginners to pick up and integrate into projects.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Angular</strong></td>
-                            <td>Framework</td>
-                            <td>Hell no. I only used it for a brief project and didn't enjoy the experience.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Tailwind CSS</strong></td>
-                            <td>Framework</td>
-                            <td>Excellent! Highly customizable and great for rapid UI development. <br> Main CSS
-                              Framework for all projects.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Bootstrap</strong></td>
-                            <td>Framework</td>
-                            <td>Not bad, Mid. Only for serious and lightweight projects, <br> and even then I would
-                              prefer Tailwind CSS.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Foundation</strong></td>
-                            <td>Framework</td>
-                            <td>Very Classic Style, not much components, but i like it for some reason. <br> I used it
-                              for a project web desktop app with simple style and it worked well.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>FontAwesome</strong></td>
-                            <td>Library</td>
-                            <td>Great for adding icons to projects. Easy to use and widely supported. <br> Main icon
-                              library for all projects.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Axios</strong></td>
-                            <td>Library</td>
-                            <td>Simple and effective for making HTTP requests. <br> I use it for handling API calls in my front-end projects. <br> Fetch in my opinion is mid.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Chart.js</strong></td>
-                            <td>Library</td>
-                            <td>Powerful and flexible for creating interactive charts. <br> I use it for data visualization in web projects.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Typescript</strong></td>
-                            <td>Language</td>
-                            <td>Strongly typed superset of JavaScript. <br> I use it for large-scale projects to ensure type safety and maintainability. <br> Bro I fucking hate Javascript.</td>
-                          </tr>
+                          {% endfor %}
                         </tbody>
                       </table>
                     </div>
-
                   </article>
 
                   <article role="tabpanel" id="tab-B" hidden="true">
                     <h3>Back End Stack</h3>
                     <p>
-                      Back end, my main working area, I have extensive experience with <strong>Python</strong> and
+                      Backend is my main working area. I have extensive experience with <strong>Python</strong> and
                       <strong>PHP</strong>, and I'm proficient in using frameworks like <strong>Flask</strong> and
-                      <strong>Laravel</strong>, my fucking main. I build robust and scalable web applications. I also have experience with
-                      databases like <strong>MySQL</strong> and <strong>MongoDB</strong>, and I'm skilled in designing and optimizing database schemas for efficient data storage and retrieval.
+                      <strong>Laravel</strong>. I build robust and scalable web applications. I also have experience
+                      with
+                      databases like <strong>MySQL</strong> and <strong>MongoDB</strong>, and I am skilled at designing
+                      and optimizing database schemas for efficient storage and querying.
                     </p>
-
                     <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
                       <table style="min-width: 100%;">
                         <thead>
@@ -162,50 +114,27 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for item in techstack if item.type == 'Back End' %}
                           <tr>
-                            <td><strong>Laravel</strong></td>
-                            <td>Framework</td>
-                            <td>Love it! It's elegant, very, very very very elegant. <br> It's my go-to framework for PHP projects, nah, for ALL projects.</td>
+                            <td><strong>{{ item.name }}</strong></td>
+                            <td>{{ item.tech_type }}</td>
+                            <td>{{ item.opinion }}</td>
                           </tr>
-                          <tr>
-                            <td><strong>Flask</strong></td>
-                            <td>Framework</td>
-                            <td>Lightweight and flexible. Great for small to medium projects. <br> I use it for Python projects when I need simplicity and speed. <br> And this Website btw.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Python</strong></td>
-                            <td>Language</td>
-                            <td>Versatile and powerful. Great for web development,data analysis, and <br> automation. I use it for backend development and scripting.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>PHP</strong></td>
-                            <td>Language</td>
-                            <td>Meh, Vanilla PHP is a mess, but with Laravel it becomes a joy to work with. <br> I use it for web development, <br> especially when working with Laravel.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Eloquent</strong></td>
-                            <td>ORM</td>
-                            <td>Elegant and powerful. Great for working with databases in Laravel. <br> I use it for database interactions in Laravel projects.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>SQLAlchemy</strong></td>
-                            <td>ORM</td>
-                            <td>Powerful and flexible. Great for working with databases in Python. <br> I use it for database interactions in Flask projects.</td>
-                          </tr>
+                          {% endfor %}
                         </tbody>
                       </table>
                     </div>
-
                   </article>
 
                   <article role="tabpanel" id="tab-C" hidden="true">
                     <h3>Databases and Caching</h3>
-
                     <p>
                       I have experience with relational databases like <strong>MySQL</strong> and
-                      <strong>PostgreSQL</strong>, as well as NoSQL databases like <strong>MongoDB</strong>. I'm skilled in designing efficient database schemas, writing complex queries, and optimizing database performance. I also have experience with caching solutions like <strong>Redis</strong> to improve application performance and scalability.
+                      <strong>PostgreSQL</strong>, as well as NoSQL databases like <strong>MongoDB</strong>. I'm skilled
+                      at designing efficient database schemas, writing complex queries, and optimizing database
+                      performance. I also have experience with caching solutions like <strong>Redis</strong> to improve
+                      application performance and scalability.
                     </p>
-
                     <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
                       <table style="min-width: 100%;">
                         <thead>
@@ -216,50 +145,26 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for item in techstack if item.type == 'Database / Cache' %}
                           <tr>
-                            <td><strong>MySQL / MariaDB</strong></td>
-                            <td>Relational Database</td>
-                            <td>Reliable and widely used. Great for structured data and complex  <br> queries. I use it for most of my projects  <br> that require a relational database.</td>
+                            <td><strong>{{ item.name }}</strong></td>
+                            <td>{{ item.tech_type }}</td>
+                            <td>{{ item.opinion }}</td>
                           </tr>
-                          <tr>
-                            <td><strong>Oracle</strong></td>
-                            <td>Relational Database</td>
-                            <td>I only used it on college, it's.. okay. But the $$$ is not worth it. <br> I don't use it for personal projects, but I have experience  <br> with it from my studies.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>MongoDB</strong></td>
-                            <td>NoSQL Database</td>
-                            <td>Flexible and scalable. Great for unstructured data and rapid  <br> development. I use it for projects that require a NoSQL database  <br> or when working with large volumes of unstructured data.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Redis</strong></td>
-                            <td>Caching Solution</td>
-                            <td>Fast and efficient. Great for caching and real-time applications. <br> I use it to improve performance and scalability  <br> in my web applications.</td>
-                          </tr>
+                          {% endfor %}
                         </tbody>
                       </table>
                     </div>
-
                   </article>
 
                   <article role="tabpanel" id="tab-D" hidden="true">
-
                     <h3>DevOps Tools</h3>
-
                     <p>
-                      I've always thought that DevOps was like the "dark side" for system administrators, but rather than trying to eliminate it,
-                      it complements their work. In my experience, tools like <strong>Docker</strong> have been
-                      fundamental for creating consistent development and production environments, especially in microservices architectures.
-                      Additionally, I've used CI/CD tools like <strong>Jenkins</strong> and <strong>GitHub Actions</strong> to automate build and
-                      deployment processes, which has significantly improved the efficiency and quality of my projects. In summary, although DevOps
-                      may seem intimidating at first, it's an essential part of modern development and has been a valuable addition to my skillset
-                      as a developer and system administrator.
-                        <br><br>
-                        But always, Always, I prefer to write my own <strong>bash scripts</strong> to automate tasks, I don't like to depend on <strong>third party tools</strong>, but when the project is big and complex, I have to use them.
-                        <br><br>
-                        You'll never see me using <strong>cPanel</strong>, btw, I fucking hate <strong>cPanel</strong>, it's a piece of ... nah. I only don't like programs that make things easy for you.
+                      I've always thought that DevOps was like the "dark side" for system administrators, but instead of
+                      eliminating it,
+                      it complements their work. Tools like <strong>Docker</strong> have been fundamental for creating
+                      consistent development and production environments.
                     </p>
-
                     <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
                       <table style="min-width: 100%;">
                         <thead>
@@ -270,28 +175,17 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for item in techstack if item.type == 'DevOps' %}
                           <tr>
-                            <td><strong>Docker</strong></td>
-                            <td>Containerization Tool</td>
-                            <td>Docker is like a double-edged sword, <br> if it works, you did it, <br>   if it doesn't work, you're screwed.  <br> That simple. <br> But I love it anyway. </td>
+                            <td><strong>{{ item.name }}</strong></td>
+                            <td>{{ item.tech_type }}</td>
+                            <td>{{ item.opinion }}</td>
                           </tr>
-                          <tr>
-                            <td><strong>Docker Compose</strong></td>
-                            <td>Container Orchestration Tool</td>
-                            <td>Great for managing multiple containers. <br> I use it to orchestrate all my services.</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Jenkins</strong></td>
-                            <td>CI/CD Tool</td>
-                            <td>Highly customizable and widely used for automating <br> build and deployment processes. <br> I use it to set up CI/CD pipelines for my <br> projects to automate testing and deployment.</td>
-                          </tr>
+                          {% endfor %}
                         </tbody>
                       </table>
                     </div>
-
                   </article>
-
-                  
                 </section>
 
               </div>
