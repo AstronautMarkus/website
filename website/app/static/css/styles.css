@@ -173,7 +173,7 @@ body {
   overflow-x: hidden;
 }
 
- /* Header sticky refactor for sidebar */
+/* Header sticky refactor for sidebar */
 
 .background {
   position: fixed;
@@ -416,10 +416,36 @@ blockquote {
 }
 
 .footer {
+  position: relative;
   padding: 12px 16px 28px;
   text-align: center;
   color: #365564;
   font-size: 0.85rem;
+  overflow: visible;
+}
+
+.footer-copy {
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-clownfish {
+  position: absolute;
+  right: 12px;
+  bottom: -10px;
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.footer-sticker {
+  display: block;
+  margin: 10px auto 0;
+  height: 60px;
+  pointer-events: none;
 }
 
 
@@ -429,9 +455,11 @@ blockquote {
     min-height: 60px;
     max-height: 18vw;
   }
+
   .shell {
     grid-template-columns: 1fr;
   }
+
   .side {
     margin-top: 24px;
   }
@@ -458,6 +486,7 @@ blockquote {
     overflow-y: auto;
     display: block;
   }
+
   .window-body.has-space thead,
   .window-body.has-space tbody,
   .window-body.has-space tr {
@@ -465,16 +494,19 @@ blockquote {
     width: 100%;
     table-layout: fixed;
   }
+
   .window-body.has-space td,
   .window-body.has-space th {
     word-break: break-word;
     font-size: 0.92em;
     padding: 6px 8px;
   }
+
   .window-body.has-space table {
     width: 100%;
     border-collapse: collapse;
   }
+
   .window-body.has-space {
     padding: 0;
   }

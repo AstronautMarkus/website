@@ -1,0 +1,10 @@
+<footer class="footer">
+    <img class="footer-clownfish" src="{{ url_for('static', filename='/img/assets/clownfish.webp')}}" alt="Clownfish" aria-hidden="true">
+    <span class="footer-copy"></span>
+    <img class="footer-sticker" src="{{ url_for('static', filename='/img/assets/turn_off.png')}}" alt="Turn Off Sticker">
+</footer>
+
+<script>
+    const year = new Date().getFullYear();
+    document.querySelector('.footer span').textContent = `© ${year} AstronautMarkusDev. All rights reserved.`;
+</script>
