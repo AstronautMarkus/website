@@ -113,3 +113,109 @@
 	margin: 0;
 	line-height: 1.6;
 }
+
+.win7-wide-shell {
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+}
+
+.win7-wide-shell .window {
+	width: 100%;
+	max-width: 900px;
+}
+
+.computer-list-head {
+	display: flex;
+	gap: 1rem;
+	align-items: stretch;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 1rem;
+}
+
+.computer-tab-menu {
+	display: flex;
+	gap: 0.5rem;
+	margin: 0 0 1rem;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
+.computer-tab-menu [role="tab"][aria-selected="true"] {
+	font-weight: 700;
+}
+
+.computer-list-text {
+	flex: 1 1 320px;
+}
+
+.computer-list-text h3 {
+	margin: 0 0 0.45rem;
+}
+
+.computer-list-text p {
+	margin: 0;
+	line-height: 1.55;
+}
+
+.computer-photo-slot {
+	flex: 0 0 180px;
+	aspect-ratio: 1 / 1;
+	min-height: 0;
+	display: grid;
+	place-items: stretch;
+	border: 1px dashed #8a8a8a;
+	background: #f7f7f7;
+	color: #555;
+	font-size: 0.9rem;
+	text-align: center;
+	padding: 0;
+	overflow: hidden;
+}
+
+.computer-photo-slot img {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	max-height: none;
+	object-fit: cover;
+	object-position: center;
+	margin: 0;
+}
+
+.computer-table-wrap {
+	max-width: 100%;
+	overflow-x: auto;
+	margin-top: 0.5rem;
+}
+
+.computer-list-table {
+	min-width: 100%;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.computer-list-table thead tr {
+	background-color: #f0f0f0;
+}
+
+.computer-list-table th,
+.computer-list-table td {
+	padding: 10px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.computer-list-table th {
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.computer-list-table tbody tr {
+	border-bottom: 1px solid #ddd;
+}
+
+.computer-list-table tbody tr:last-child {
+	border-bottom: none;
+}

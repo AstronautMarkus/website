@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const tabButtons = document.querySelectorAll('section.tabs [role="tab"]');
-    const tabPanels = document.querySelectorAll('section.tabs [role="tabpanel"]');
+    const loreTabsSection = document.querySelector('section.tabs.lore-tabs');
+    if (!loreTabsSection) {
+        return;
+    }
+
+    const tabButtons = loreTabsSection.querySelectorAll('[role="tab"]');
+    const tabPanels = loreTabsSection.querySelectorAll('[role="tabpanel"]');
 
     tabButtons.forEach((button, idx) => {
         button.addEventListener('click', function () {
