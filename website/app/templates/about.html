@@ -1,0 +1,322 @@
+{% extends 'layout/base.html' %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page" id="top">
+    <div class="shell-single">
+        <div class="main-content-single">
+            <section class="glass-panel" id="main">
+                <div class="bio-container">
+                    <div class="win7">
+
+                        <div class="window active" style="max-width: 300px">
+                            <div class="title-bar">
+                                <div class="title-bar-text">Pfp</div>
+                                <div class="title-bar-controls">
+                                    <button aria-label="Close" disabled></button>
+                                </div>
+                            </div>
+                            <div class="window-body has-space">
+                                <img src="{{ url_for('static', filename='img/og-image.jpg') }}"
+                                    alt="Marcos Reyes thumbnail" />
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="bio-content">
+                        <div class="post-header">
+                            <span class="badge">BIO</span>
+                            <h2>Marcos Reyes <span>/ AstronautMarkusDev</span></h2>
+                        </div>
+                        <p class="bio-main">
+                            My name is <strong>Marcos Reyes</strong>. I was born the <strong>16th of March,
+                                2003</strong>.
+                            Today I am <strong>{{ current_age() }}</strong> years old.
+                        </p>
+                        <ul>
+                            <li>I love hardware, networks, and development.</li>
+                            <li>I'm currently learning Networking and Radioamateur.</li>
+                            <li>I enjoy exploring new technologies and tools.</li>
+                            <li>I love retro technology. I mean, 2000s/2010s era stuff. This is retro btw!!</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="shell-single">
+        <div class="main-content-single">
+            <section class="glass-panel" id="main">
+                <div class="info-page">
+                    <div class="post-header">
+                        <span class="badge">Markus Lore</span>
+                        <h2>My Personal Universe</h2>
+                    </div>
+                    <p class="bio-main">
+                        Each person is a world, a constantly growing universe, don't you think? Even our end can be the
+                        beginning of others, how profound to think that.
+                    </p>
+
+                    <div class="win7" style="display: flex; justify-content: center; margin-top: 1em;">
+                        <div class="window active" style="width: 100%; max-width: 700px;">
+                            <div class="title-bar">
+                                <div class="title-bar-text">Markus Lore Table</div>
+                                <div class="title-bar-controls">
+                                    <button aria-label="Minimize"></button>
+                                    <button aria-label="Maximize"></button>
+                                    <button aria-label="Close"></button>
+                                </div>
+                            </div>
+                            <div class="window-body has-space">
+
+                                <section class="tabs" style="max-width: 700px">
+                                    <menu role="tablist" aria-label="Markus Lore Tabs">
+                                        <button role="tab" aria-controls="lore-tab-A" aria-selected="true">01. Identity Snapshot</button>
+                                        <button role="tab" aria-controls="lore-tab-B" aria-selected="false">02. Favorite Drink</button>
+                                        <button role="tab" aria-controls="lore-tab-C" aria-selected="false">03. Daily Flow</button>
+                                    </menu>
+
+                                    <article role="tabpanel" id="lore-tab-A">
+                                        <h3>Identity Snapshot</h3>
+                                        <p>I've had several online names, but <strong>AstronautMarkusDev</strong> is the one that stuck.</p>
+                                        <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
+                                            <table style="min-width: 100%; width: 100%; border-collapse: collapse;">
+                                                <thead>
+                                                    <tr style="background-color: #f0f0f0;">
+                                                        <th style="padding: 10px; text-align: left; font-weight: bold; width: 20%;">Title</th>
+                                                        <th style="padding: 10px; text-align: left; font-weight: bold; width: 80%;">Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom: 1px solid #ddd;">
+                                                        <td style="padding: 10px;"><strong>Alias</strong></td>
+                                                        <td style="padding: 10px;">AstronautMarkusDev / "Endless Seeker" (A lot of unused aliases over the years...)</td>
+                                                    </tr>
+                                                    <tr style="border-bottom: 1px solid #ddd;">
+                                                        <td style="padding: 10px;"><strong>Origin story</strong></td>
+                                                        <td style="padding: 10px;">I've been making <strong>GTA San Andreas videos and mods</strong> since my teens. <br> Now I'm a <strong>computer programmer</strong> with a strong desire to progress with technology.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 10px;"><strong>Core trait</strong></td>
+                                                        <td style="padding: 10px;"><strong>Never leave the world as it is, always do something to improve it.</strong> <br> <em>Change the world, one line of code at a time.</em></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </article>
+
+                                    <article role="tabpanel" id="lore-tab-B" hidden="true">
+                                        <h3>Favorite Drink</h3>
+                                        <p>Caffeine is my everyday fuel, and my drink of choice is <strong>Monster Mango Loco</strong>.</p>
+                                        <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
+                                            <table style="min-width: 100%; width: 100%; border-collapse: collapse;">
+                                                <thead>
+                                                    <tr style="background-color: #f0f0f0;">
+                                                        <th style="padding: 10px; text-align: left; font-weight: bold; width: 20%;">Title</th>
+                                                        <th style="padding: 10px; text-align: left; font-weight: bold; width: 80%;">Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom: 1px solid #ddd;">
+                                                        <td style="padding: 10px;"><strong>Favorite drinks</strong></td>
+                                                        <td style="padding: 10px;">Monster Mango Loco, Ultra White, Coffee, Latte, Cortado</td>
+                                                    </tr>
+                                                    <tr style="border-bottom: 1px solid #ddd;">
+                                                        <td style="padding: 10px;"><strong>Drink of choice</strong></td>
+                                                        <td style="padding: 10px;"><strong>Monster Mango Loco</strong> for long coding sessions and late-night projects.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 10px;"><strong>Alcohol stance</strong></td>
+                                                        <td style="padding: 10px;"><strong>None</strong>. I prefer to keep full control of my mental and physical faculties. <br> I drink 0 alcohol beer btw, because I enjoy the taste without the effects.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </article>
+
+                                    <article role="tabpanel" id="lore-tab-C" hidden="true">
+                                        <h3>Daily Flow</h3>
+                                        <p>My routine is home-centered, with focused coding blocks and a lot of night learning.</p>
+                                        <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
+                                            <table style="min-width: 100%; width: 100%; border-collapse: collapse;">
+                                                <thead>
+                                                    <tr style="background-color: #f0f0f0;">
+                                                        <th style="padding: 10px; text-align: left; font-weight: bold; width: 20%;">Title</th>
+                                                        <th style="padding: 10px; text-align: left; font-weight: bold; width: 80%;">Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom: 1px solid #ddd;">
+                                                        <td style="padding: 10px;"><strong>Morning boot</strong></td>
+                                                        <td style="padding: 10px;">I wake up at a not-too-early hour and turn on the workstation to save time.</td>
+                                                    </tr>
+                                                    <tr style="border-bottom: 1px solid #ddd;">
+                                                        <td style="padding: 10px;"><strong>Deep work block</strong></td>
+                                                        <td style="padding: 10px;">I use <strong>Linux Mint</strong> and spend the day coding, learning, and building projects <br> with focused attention.</td>
+                                                    </tr>
+                                                    <tr style="border-bottom: 1px solid #ddd;">
+                                                        <td style="padding: 10px;"><strong>Hardware & networking</strong></td>
+                                                        <td style="padding: 10px;">In the afternoon, I experiment with hardware, network configuration, <br> and new technologies.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 10px;"><strong>Night learning</strong></td>
+                                                        <td style="padding: 10px;">After eating, I usually code at night where motivation is higher and <br> distractions are fewer.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </article>
+
+                                    
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="shell-single">
+        <div class="main-content-single">
+            <section class="glass-panel" id="main">
+                <div class="info-page">
+                    <div class="info-grid">
+                        <article class="info-card info-card-wide">
+                            <h3>05. Personal Timeline</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida, eros at
+                                pulvinar ullamcorper, turpis lacus laoreet mauris, quis sodales urna sem ac justo.
+                                Donec at tortor vel sapien volutpat ultricies in a neque.
+                            </p>
+                            <ul class="timeline-list">
+                                <li><strong>Phase A:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </li>
+                                <li><strong>Phase B:</strong> Sed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua.</li>
+                                <li><strong>Phase C:</strong> Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris.</li>
+                                <li><strong>Phase D:</strong> Duis aute irure dolor in reprehenderit in voluptate velit
+                                    esse.</li>
+                                <li><strong>Phase E:</strong> Excepteur sint occaecat cupidatat non proident, sunt in
+                                    culpa.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="shell-single">
+        <div class="main-content-single">
+            <section class="glass-panel" id="main">
+                <div class="info-page">
+                    <div class="info-grid">
+                        <article class="info-card">
+                            <h3>06. Things I Enjoy</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius orci id lacus
+                                gravida facilisis. Nulla facilisi. Aenean consequat, lorem ac efficitur efficitur,
+                                lectus mi tristique est, ac fermentum libero nibh a neque.
+                            </p>
+                            <ul>
+                                <li>Retro software aesthetics and old-school interfaces.</li>
+                                <li>Building small tools that solve real-life annoyances.</li>
+                                <li>Reading docs and testing weird edge cases for fun.</li>
+                                <li>Listening to lo-fi while debugging packet routes.</li>
+                            </ul>
+                        </article>
+
+                        <article class="info-card">
+                            <h3>07. Fun Facts</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque efficitur magna nec
+                                turpis luctus, nec feugiat erat convallis. Donec facilisis ullamcorper risus vel
+                                hendrerit.
+                            </p>
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+                                </li>
+                                <li>Curabitur tempus sapien vitae augue volutpat, at feugiat justo bibendum.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="shell-single">
+        <div class="main-content-single">
+            <section class="glass-panel" id="main">
+                <div class="info-page">
+                    <div class="info-grid">
+                        <article class="info-card info-card-wide">
+                            <h3>08. Goals & Missions</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod, massa et mattis
+                                dignissim, leo est posuere quam, et placerat velit turpis ut sem. Pellentesque sed
+                                justo vel leo convallis luctus.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultrices dui non nunc
+                                efficitur, id cursus ipsum facilisis. Vivamus iaculis ligula eget ipsum varius,
+                                sollicitudin aliquet nibh vulputate. Phasellus quis metus at lorem malesuada laoreet.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="shell-single">
+        <div class="main-content-single">
+            <section class="glass-panel" id="main">
+                <div class="info-page">
+                    <div class="info-grid">
+                        <article class="info-card info-card-wide">
+                            <h3>09. Rapid Q&A</h3>
+                            <dl class="qa-list">
+                                <dt>Favorite beverage?</dt>
+                                <dd>Monster Mango Loco. </dd>
+                                <dt>Preferred environment?</dt>
+                                <dd>Linux terminal: Windows terminal are trash.</dd>
+                                <dt>What keeps me motivated?</dt>
+                                <dd>The challenge of achieving things, not out of envy or wanting to compare myself to
+                                    others, but for the challenge of achieving something myself.</dd>
+                                <dt>Retro obsession level?</dt>
+                                <dd>I enjoy reviving old hardware with competent software, which is why I like Linux so
+                                    much. </dd>
+                            </dl>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
+{% endblock %}

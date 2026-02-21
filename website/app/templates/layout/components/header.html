@@ -9,8 +9,19 @@
         </div>
         <div class="header-title">AstronautMarkusDev</div>
         <nav class="header-links">
-            <button class="frutiger-aero-button medium primary">Home</button>
-            <button class="frutiger-aero-button small secondary">About</button>
+            <button class="frutiger-aero-button medium primary" id="btn-home">Home</button>
+            <button class="frutiger-aero-button small secondary" id="btn-about">About</button>
         </nav>
     </div>
 </header>
+
+{% block scripts %}
+    <script>
+        document.getElementById('btn-home').onclick = function() {
+            window.location.href = "{{ url_for('home.index') }}";
+        };
+        document.getElementById('btn-about').onclick = function() {
+            window.location.href = "{{ url_for('home.about') }}";
+        };
+    </script>
+{% endblock %}
