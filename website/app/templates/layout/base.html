@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Document</title>
 </head>
+
 <body>
     {% block content %}{% endblock %}
+
     {% block scripts %}{% endblock %}
+
+    <div class="container" id="route-path"></div>
+
+    <div class="footer">
+        <p id="footer-text"></p>
+        <p>Optimized for Netscape Navigator</p>
+    </div>
+
+    <script>
+        const footerText = document.getElementById('footer-text');
+        const routePathContainer = document.getElementById('route-path');
+        const currentYear = new Date().getFullYear();
+        footerText.textContent = `© 2003 / ${currentYear} Marcos Reyes / Lain Iwakura. All rights reserved.`;
+
+        const route = "{{ request.path }}";
+        console.log("Current route:", route);
+
+        const staticRoutes = [
+            { path: '/', label: 'Home' },
+            { path: '/post-note', label: 'Post Note' }
+        ];
+
+        const buttonsWrapper = document.createElement('div');
+
+        if (route === '/') {
+            staticRoutes.forEach((item) => {
+                const link = document.createElement('a');
+                link.href = item.path;
+                link.textContent = item.label;
+                link.className = 'route-button';
+                buttonsWrapper.appendChild(link);
+            });
+        } else {
+            const homeLink = document.createElement('a');
+            homeLink.href = '/';
+            homeLink.textContent = 'Back to Home';
+            homeLink.className = 'route-button';
+            buttonsWrapper.appendChild(homeLink);
+        }
+
+        routePathContainer.appendChild(buttonsWrapper);
+
+    </script>
 </body>
+
 </html>

@@ -10,7 +10,7 @@
   src="https://count.getloli.com/@astronautmarkusdev?name=astronautmarkusdev&theme=booru-jaypee&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto"
   alt="Visitor Count">
 
-<marquee class="marquee">IF THE CODE WORK, DON'T TOUCH IT - 2003, CREATED BY A HUMAN, FOR HUMANS</marquee>
+<marquee class="marquee">IF THE CODE WORKS, DON'T TOUCH IT!! - 2003, CREATED BY A HUMAN, FOR HUMANS</marquee>
 
 <div class="container">
   <img src="{{ url_for('static', filename='img/profile.jpg') }}" class="profile-picture" alt="Marcos Reyes">
@@ -38,6 +38,8 @@
 
 <div>
   <p>Website created using </p>
+  <a href="https://www.mysql.com/" target="_blank"><img
+      src="{{ url_for('static', filename='img/88x31_buttons/mysql-88x31.gif') }}" alt="MySQL"></a>
   <a href="https://flask.palletsprojects.com/" target="_blank"><img
       src="{{ url_for('static', filename='img/88x31_buttons/flask.gif') }}" alt="Flask"></a>
   <a href="https://code.visualstudio.com/" target="_blank"><img
@@ -48,16 +50,4 @@
       src="{{ url_for('static', filename='img/88x31_buttons/nginx.png') }}" alt="Nginx"></a>
 </div>
 
-<div class="footer">
-  <p id="footer-text"></p>
-  <p>Optimized for Netscape Navigator</p>
-</div>
-{% endblock %}
-
-{% block scripts %}
-<script>
-  const footerText = document.getElementById('footer-text');
-  const currentYear = new Date().getFullYear();
-  footerText.textContent = `© 2003 / ${currentYear} Marcos Reyes / Lain Iwakura. All rights reserved.`;
-</script>
 {% endblock %}

@@ -1,7 +1,7 @@
 body {
-  background-color: black;
-  color: white;
-  font-family: "Courier New", monospace;
+  background-color: #000014;
+  color: #e7e7ff;
+  font-family: "Verdana", "Tahoma", "Courier New", monospace;
   text-align: center;
   background-image:
     radial-gradient(1px 1px at 12px 18px, #ffffff, transparent),
@@ -14,18 +14,23 @@ body {
     radial-gradient(1px 1px at 112px 148px, #ffffff, transparent),
     radial-gradient(1px 1px at 156px 176px, #ffffff, transparent),
     radial-gradient(1px 1px at 190px 116px, #ffffff, transparent),
-    radial-gradient(1px 1px at 34px 40px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 98px 108px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 142px 18px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 176px 146px, rgba(255,255,255,0.7), transparent);
+    radial-gradient(1px 1px at 34px 40px, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 98px 108px, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 142px 18px, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 176px 146px, rgba(255, 255, 255, 0.75), transparent),
+    repeating-linear-gradient(0deg, rgba(15, 15, 40, 0.15) 0 2px, rgba(0, 0, 0, 0) 2px 4px);
   background-size: 200px 200px;
   background-repeat: repeat;
+  margin: 0;
+  padding: 16px;
 }
 
 h1 {
-  font-size: 42px;
-  text-shadow: 0 0 15px #b026ff;
-  color: #b026ff;
+  font-size: 40px;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #ff00ff;
 }
 
 ul li {
@@ -33,37 +38,59 @@ ul li {
 }
 
 .container {
-  border: 3px solid #b026ff;
+  border: 2px solid #8f8fa8;
+  border-top-color: #dedee8;
+  border-left-color: #dedee8;
+  border-right-color: #595968;
+  border-bottom-color: #595968;
   padding: 20px;
   margin: 25px auto;
-  width: 850px;
-  background: rgb(55, 19, 56);
-  box-shadow: 0 0 20px #b026ff;
+  width: min(850px, 94vw);
+  background: #202038;
+  box-shadow: inset 1px 1px 0 #ffffff33, inset -1px -1px 0 #00000066;
 }
 
 button {
-  background: black;
-  color: #b026ff;
-  border: 2px solid #b026ff;
-  padding: 10px 20px;
+  background: #c0c0c0;
+  color: #000;
+  border: 2px solid #808080;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+  padding: 8px 16px;
   cursor: pointer;
   font-family: inherit;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 button:hover {
-  background: #b026ff;
-  color: black;
+  background: #d4d4d4;
+}
+
+button:active {
+  border-top-color: #404040;
+  border-left-color: #404040;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+  transform: translate(1px, 1px);
 }
 
 .marquee {
-  color: #ff00ff;
+  color: #ff6a00;
   font-weight: bold;
 }
 
 .profile-picture {
   width: 150px;
   height: 150px;
-  border: 3px solid #b026ff;
+  border: 2px solid #9f9fb5;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  border-right-color: #5d5d6f;
+  border-bottom-color: #5d5d6f;
   margin-bottom: 20px;
   pointer-events: none;
   object-fit: cover;
@@ -74,9 +101,10 @@ button:hover {
 .terminal {
   text-align: left;
   padding: 15px;
-  background: black;
-  border: 2px dashed #b026ff;
+  background: #090914;
+  border: 2px solid #00ffff;
   font-size: 14px;
+  box-shadow: inset 0 0 0 1px #ff00ff66;
 }
 
 .footer {
@@ -86,10 +114,36 @@ button:hover {
 }
 
 a {
-  color: #ff00ff;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+
+.route-button {
+  display: inline-block;
+  margin: 6px;
+  padding: 8px 14px;
+  background: #c0c0c0;
+  color: #000;
+  border: 2px solid #808080;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-size: 12px;
+}
+
+.route-button:hover {
+  background: #d4d4d4;
+  color: #000;
+  text-decoration: none;
+}
+
+.route-button:active {
+  border-top-color: #404040;
+  border-left-color: #404040;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+  transform: translate(1px, 1px);
 }
