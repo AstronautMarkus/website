@@ -1,0 +1,95 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Courier New", monospace;
+  text-align: center;
+  background-image:
+    radial-gradient(1px 1px at 12px 18px, #ffffff, transparent),
+    radial-gradient(1px 1px at 45px 72px, #ffffff, transparent),
+    radial-gradient(1px 1px at 88px 33px, #ffffff, transparent),
+    radial-gradient(1px 1px at 130px 95px, #ffffff, transparent),
+    radial-gradient(1px 1px at 172px 42px, #ffffff, transparent),
+    radial-gradient(1px 1px at 22px 130px, #ffffff, transparent),
+    radial-gradient(1px 1px at 66px 168px, #ffffff, transparent),
+    radial-gradient(1px 1px at 112px 148px, #ffffff, transparent),
+    radial-gradient(1px 1px at 156px 176px, #ffffff, transparent),
+    radial-gradient(1px 1px at 190px 116px, #ffffff, transparent),
+    radial-gradient(1px 1px at 34px 40px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 98px 108px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 142px 18px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 176px 146px, rgba(255,255,255,0.7), transparent);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+h1 {
+  font-size: 42px;
+  text-shadow: 0 0 15px #b026ff;
+  color: #b026ff;
+}
+
+ul li {
+  list-style: none;
+}
+
+.container {
+  border: 3px solid #b026ff;
+  padding: 20px;
+  margin: 25px auto;
+  width: 850px;
+  background: rgb(55, 19, 56);
+  box-shadow: 0 0 20px #b026ff;
+}
+
+button {
+  background: black;
+  color: #b026ff;
+  border: 2px solid #b026ff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:hover {
+  background: #b026ff;
+  color: black;
+}
+
+.marquee {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border: 3px solid #b026ff;
+  margin-bottom: 20px;
+  pointer-events: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.terminal {
+  text-align: left;
+  padding: 15px;
+  background: black;
+  border: 2px dashed #b026ff;
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+a {
+  color: #ff00ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

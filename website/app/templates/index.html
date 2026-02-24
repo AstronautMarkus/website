@@ -1,494 +1,63 @@
-{% extends 'layout/base.html' %}
+{% extends "layout/base.html" %}
 
 {% block content %}
-<div class="page" id="top">
-  <header class="top-banner">
-    <div class="banner-glass">
-      <div class="banner-strip">
-        <div class="banner-photo"></div>
-      </div>
-    </div>
-  </header>
+<div>
+  <h1>MARCOS REYES WEBSITE</h1>
+  <i>AstronautMarkus.Dev</i>
+</div>
 
-  <div class="shell">
-    <div class="main-content">
-      <section class="glass-panel" id="main">
-        <div class="post">
-          <div class="post-header">
-            <span class="badge">Main</span>
-            <h2>Who am I?</h2>
-            <p class="meta">Full Stack Developer · Linux Enthusiast · System Administrator</p>
-          </div>
+<img
+  src="https://count.getloli.com/@astronautmarkusdev?name=astronautmarkusdev&theme=booru-jaypee&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto"
+  alt="Visitor Count">
 
-          <div style="display: flex; gap: 1em; align-items: flex-start; margin-bottom: 1em;">
-            <img src="{{ url_for('static', filename='img/icons/network.png')}}" alt="Network"
-              style="width: 10%; max-width: 150px; flex-shrink: 0;">
-            <p>
-              Hello, world. My name is <strong>Marcos Reyes</strong>, but you can call me <strong>Markus</strong>. I'm a
-              passionate <strong>Full Stack Developer</strong>
-              and <strong>System Administrator</strong> with a love for aero and modern web technologies. <br>
-              I specialize in the <strong>LAMP web stack</strong>, but I'm always eager to explore new tools and
-              frameworks. I have a
-              knack for creating efficient, scalable, and secure web applications that blend functionality with
-              aesthetics.
-            </p>
-          </div>
+<marquee class="marquee">IF THE CODE WORK, DON'T TOUCH IT - 2003, CREATED BY A HUMAN, FOR HUMANS</marquee>
 
-          <div style="display: flex; gap: 1em; align-items: flex-start; margin-bottom: 1em;">
-            <p>
-              When I'm not coding, I'm probably tinkering with my <strong>Home Lab</strong>, driving my truck, or
-              listening to <strong>high BPM music</strong>. <br>
-            </p>
-            <img src="{{ url_for('static', filename='img/icons/objects_29.png')}}" alt="CRT monitor"
-              style="width: 10%; max-width: 150px; flex-shrink: 0;">
-          </div>
+<div class="container">
+  <img src="{{ url_for('static', filename='img/profile.jpg') }}" class="profile-picture" alt="Marcos Reyes">
+  <h2> ABOUT ME</h2>
+  <p>Full Stack Developer & Systems Administrator | Innovation, Performance and Security
+    I create high-impact technological solutions, from SaaS to hosting platforms and e-commerce, combining
+    React, Laravel, Python and Docker with Agile methodologies. I lead teams, optimize processes and build
+    reliable, secure and scalable software that truly transforms businesses.
+  </p>
+</div>
 
-          <p>
-            I like <strong>cats</strong>, I like <strong>coffee</strong>, <strong>caffeine</strong> is my best friend.
-            <br>
-            I hate <strong>NVIDIA</strong> and their proprietary drivers, but I love <strong>Linux</strong> and
-            <strong>AMD</strong> hardware. <br>
-            Welcome to my personal blog, where I share my projects, thoughts, and experiences in the world of
-            <strong>web development</strong> and <strong>system administration</strong>. Feel free to explore and
-            connect with me!
-          </p>
-        </div>
-      </section>
-      <div class="divider"></div>
-      <section class="glass-panel" id="techstack">
-        <div class="post">
-          <div class="post-header">
-            <span class="badge">Tech Stack</span>
-          </div>
+<div class="container">
+  <h2> WHAT I DO</h2>
+  <p>
+    I specialize in building high-performance web applications and scalable infrastructure. My expertise includes:
+  <ul style="list-style-type: square;">
+    <li>Full Stack Development: React, Laravel, Python</li>
+    <li>Systems Administration: Linux, Docker, Nginx, Apache</li>
+    <li>Networking / IoT: FortiGate, TP-Link, Raspberry Pi, ESP32</li>
+    <li>Agile Methodologies: Scrum, Kanban</li>
+    <li>Cloud Services: AWS, Oracle</li>
+  </ul>
+  </p>
+</div>
 
-          <div class="win7" style="display: flex; justify-content: center; margin-top: 1em;">
-            <div class="window active" style="width: 100%; max-width: 700px;">
-              <div class="title-bar">
-                <div class="title-bar-text">Markus Tech Stack</div>
-                <div class="title-bar-controls">
-                  <button aria-label="Minimize"></button>
-                  <button aria-label="Maximize"></button>
-                  <button aria-label="Close"></button>
-                </div>
-              </div>
-              <div class="window-body has-space">
+<div>
+  <p>Website created using </p>
+  <a href="https://flask.palletsprojects.com/" target="_blank"><img
+      src="{{ url_for('static', filename='img/88x31_buttons/flask.gif') }}" alt="Flask"></a>
+  <a href="https://code.visualstudio.com/" target="_blank"><img
+      src="{{ url_for('static', filename='img/88x31_buttons/vscbutton.gif') }}" alt="Visual Studio Code"></a>
+  <a href="https://linuxmint.com/" target="_blank"><img
+      src="{{ url_for('static', filename='img/88x31_buttons/linux_mint.gif') }}" alt="Linux Mint"></a>
+  <a href="https://nginx.org/" target="_blank"><img
+      src="{{ url_for('static', filename='img/88x31_buttons/nginx.png') }}" alt="Nginx"></a>
+</div>
 
-                <section class="tabs techstack-tabs" style="max-width: 700px">
-                  <menu role="tablist" aria-label="Sample Tabs">
-                    <button role="tab" aria-controls="tab-A" aria-selected="true">Front End</button>
-                    <button role="tab" aria-controls="tab-B" aria-selected="false">Back End</button>
-                    <button role="tab" aria-controls="tab-C" aria-selected="false">Database / Cache</button>
-                    <button role="tab" aria-controls="tab-D" aria-selected="false">DevOps</button>
-                  </menu>
-
-                  <article role="tabpanel" id="tab-A">
-                    <h3>Front End Stack</h3>
-                    <p>
-                      I have experience with <strong>HTML</strong>, <strong>CSS</strong>, and
-                      <strong>JavaScript</strong>, and I'm proficient in using frameworks like
-                      <strong>React</strong>
-                      and <strong>Tailwind CSS</strong> to build dynamic and responsive user interfaces. I also have a
-                      good understanding of
-                      accessibility best practices and strive to create inclusive web experiences for all users.
-                    </p>
-                    <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
-                      <table style="min-width: 100%;">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Opinion</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {% for item in techstack if item.type == 'Front End' %}
-                          <tr>
-                            <td><strong>{{ item.name }}</strong></td>
-                            <td>{{ item.tech_type }}</td>
-                            <td style="white-space: pre-wrap;">{{ item.opinion }}</td>
-                          </tr>
-                          {% endfor %}
-                        </tbody>
-                      </table>
-                    </div>
-                  </article>
-
-                  <article role="tabpanel" id="tab-B" hidden="true">
-                    <h3>Back End Stack</h3>
-                    <p>
-                      Backend is my main working area. I have extensive experience with <strong>Python</strong> and
-                      <strong>PHP</strong>, and I'm proficient in using frameworks like <strong>Flask</strong> and
-                      <strong>Laravel</strong>. I build robust and scalable web applications. I also have experience
-                      with
-                      databases like <strong>MySQL</strong> and <strong>MongoDB</strong>, and I am skilled at designing
-                      and optimizing database schemas for efficient storage and querying.
-                    </p>
-                    <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
-                      <table style="min-width: 100%;">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Opinion</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {% for item in techstack if item.type == 'Back End' %}
-                          <tr>
-                            <td><strong>{{ item.name }}</strong></td>
-                            <td>{{ item.tech_type }}</td>
-                            <td style="white-space: pre-wrap;">{{ item.opinion }}</td>
-                          </tr>
-                          {% endfor %}
-                        </tbody>
-                      </table>
-                    </div>
-                  </article>
-
-                  <article role="tabpanel" id="tab-C" hidden="true">
-                    <h3>Databases and Caching</h3>
-                    <p>
-                      I have experience with relational databases like <strong>MySQL</strong> and
-                      <strong>PostgreSQL</strong>, as well as NoSQL databases like <strong>MongoDB</strong>. I'm skilled
-                      at designing efficient database schemas, writing complex queries, and optimizing database
-                      performance. I also have experience with caching solutions like <strong>Redis</strong> to improve
-                      application performance and scalability.
-                    </p>
-                    <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
-                      <table style="min-width: 100%;">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Opinion</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {% for item in techstack if item.type == 'Database / Cache' %}
-                          <tr>
-                            <td><strong>{{ item.name }}</strong></td>
-                            <td>{{ item.tech_type }}</td>
-                            <td style="white-space: pre-wrap;">{{ item.opinion }}</td>
-                          </tr>
-                          {% endfor %}
-                        </tbody>
-                      </table>
-                    </div>
-                  </article>
-
-                  <article role="tabpanel" id="tab-D" hidden="true">
-                    <h3>DevOps Tools</h3>
-                    <p>
-                      I've always thought that DevOps was like the "dark side" for system administrators, but instead of
-                      eliminating it,
-                      it complements their work. Tools like <strong>Docker</strong> have been fundamental for creating
-                      consistent development and production environments.
-                    </p>
-                    <div style="max-width: 100%; overflow-x: auto; margin-top: 12px;">
-                      <table style="min-width: 100%;">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Opinion</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {% for item in techstack if item.type == 'DevOps' %}
-                          <tr>
-                            <td><strong>{{ item.name }}</strong></td>
-                            <td>{{ item.tech_type }}</td>
-                            <td style="white-space: pre-wrap;">{{ item.opinion }}</td>
-                          </tr>
-                          {% endfor %}
-                        </tbody>
-                      </table>
-                    </div>
-                  </article>
-                </section>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <section class="glass-panel" id="techstack">
-        <div class="post">
-          <div class="post-header">
-            <span class="badge">My Website</span>
-          </div>
-
-          <div class="win7" style="display: flex; justify-content: center; margin-top: 1em;">
-            <div class="window active" style="width: 100%; max-width: 700px;">
-              <div class="title-bar">
-                <div class="title-bar-text">Info</div>
-                <div class="title-bar-controls">
-                  <button aria-label="Minimize"></button>
-                  <button aria-label="Maximize"></button>
-                  <button aria-label="Close"></button>
-                </div>
-              </div>
-              <div class="window-body has-space">
-                <h3>Info</h3>
-                <p>
-                  This website is built with <strong>Flask</strong>, a Python web framework, and styled with custom CSS
-                  to achieve a retro <strong>Windows 7</strong> aesthetic.
-                </p>
-
-                <h4 style="margin-top: 1em; margin-bottom: 0.5em;">Navigation</h4>
-                <p style="margin: 0.5em 0;">
-                  You can see all pages with the navigation bar in the top. Please check the <strong>"About"</strong>
-                  section in the right sidebar to know more about me.
-                </p>
-
-                <h4 style="margin-top: 1em; margin-bottom: 0.5em;">Leave a Message</h4>
-                <p style="margin: 0.5em 0;">
-                  If you want to leave me a message, check the <strong>"Anonymous Notes"</strong> section in the right
-                  sidebar. Your note will be displayed in the <strong>"Notes"</strong> tab.
-                </p>
-
-                <h4 style="margin-top: 1em; margin-bottom: 0.5em;">Resources & Tools</h4>
-                <p style="margin: 0.5em 0;">
-                  Check the <strong>"Resources"</strong> page to see the tools and technologies I use in my projects.
-                </p>
-
-                <h4 style="margin-top: 1em; margin-bottom: 0.5em;">Get in Touch</h4>
-                <p style="margin: 0.5em 0;">
-                  Have questions or suggestions? Visit the <strong>"Contact"</strong> page or reach out through my
-                  social media. I'd love to hear from you!
-                </p>
-
-                <img src="{{ url_for('static', filename='img/assets/banana-happy.gif') }}" alt="Happy Banana"
-                  style="display: block; margin: 1em auto; width: 100px; height: auto;">
-
-              </div>
-              <div class="status-bar">
-                <p class="status-bar-field"><a href="https://astronautmarkus.dev">https://astronautmarkus.dev</a></p>
-                <p class="status-bar-field">Main Website</p>
-                <p class="status-bar-field">If the code works don't touch it</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <section class="glass-panel" id="techstack">
-        <div class="post">
-          <div class="post-header">
-            <span class="badge">Kitty Image</span>
-            <h2>Why not?</h2>
-          </div>
-
-          <div style="display: flex; justify-content: center; ">
-            <img src="{{ url_for('static', filename='img/assets/kitty.gif') }}" alt="Kitty"
-              style="width: 50%; max-width: 250px; height: auto;">
-          </div>
-
-        </div>
-      </section>
-
-
-    </div>
-
-    <aside class="side">
-      <div class="glass-panel mini" id="about">
-        <h3>About</h3>
-        <p>I'm a Full Stack Developer and System Administrator with a passion for retro aesthetics and modern web
-          technologies. I enjoy creating nostalgic digital experiences that blend the best of both worlds.</p>
-      </div>
-      <div class="glass-panel mini" id="player">
-        <h3>Mini player</h3>
-        <iframe data-testid="embed-iframe" style="border-radius:12px"
-          src="https://open.spotify.com/embed/playlist/03OXOTX3VQyHLpQMb0lVwW?utm_source=generator" width="100%"
-          height="352" frameBorder="0" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-      <div class="glass-panel mini" id="visits">
-        <div class="win7">
-          <div class="window active" style="max-width: 500px; width: 350px;">
-            <div class="title-bar">
-              <div class="title-bar-text">Visits</div>
-              <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-              </div>
-            </div>
-            <div class="window-body has-space">
-              <img
-                src="https://count.getloli.com/@astronautmarkusdev?name=astronautmarkusdev&theme=booru-jaypee&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto"
-                style="max-width: 100%; height: auto;">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="glass-panel mini" id="messages">
-        <h3>Anonymous Notes</h3>
-        <div class="win7">
-          <div class="window active">
-            <div class="title-bar">
-              <div class="title-bar-text">Write a Note</div>
-              <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-              </div>
-            </div>
-            <div class="window-body has-space">
-              <form method="POST" action="{{ url_for('home.post_note') }}">
-                <input type="text" name="username" id="username" placeholder="Your name..."
-                  style="width:100%; padding:0.5em; margin-bottom:0.5em; border-radius:3px; border:1px solid #ccc;">
-                <div style="margin-bottom:0.5em;">
-                  <input type="checkbox" id="anonymous" name="anonymous" onclick="toggleUsernameField()">
-                  <label for="anonymous">Anonymous</label>
-                </div>
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                {% for category, message in messages %}
-                {% if category == 'error_username' %}
-                <div style="color:#b30000; font-size:0.95em; margin-bottom:0.5em;">{{ message }}</div>
-                {% endif %}
-                {% endfor %}
-                {% endwith %}
-                <textarea name="content" rows="3" placeholder="Write your message..." required
-                  style="width:100%; padding:0.5em; resize:vertical; border-radius:3px; border:1px solid #ccc;"></textarea><br>
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                {% for category, message in messages %}
-                {% if category == 'error_content' %}
-                <div style="color:#b30000; font-size:0.95em; margin-bottom:0.5em;">{{ message }}</div>
-                {% endif %}
-                {% endfor %}
-                {% endwith %}
-
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                {% for category, message in messages %}
-                {% if category == 'error' %}
-                <div style="color:#b30000; font-size:1em; margin:0.5em 0;">{{ message }}</div>
-                {% endif %}
-                {% endfor %}
-                {% endwith %}
-
-                <button type="submit"
-                  style="width:100%; margin-top:0.5em; padding:0.5em; border-radius:3px; border:1px solid #999; background-color:#dfdfdf; cursor:pointer;">Send</button>
-                <input type="hidden" name="_method" value="POST">
-                <script>
-                  function toggleUsernameField() {
-                    const checkbox = document.getElementById('anonymous');
-                    const usernameInput = document.getElementById('username');
-                    if (checkbox.checked) {
-                      usernameInput.disabled = true;
-                      usernameInput.value = '';
-                    } else {
-                      usernameInput.disabled = false;
-                    }
-                  }
-                </script>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="win7" style="margin-top:1em;">
-          <div class="window active">
-            <div class="title-bar">
-              <div class="title-bar-text">Notes</div>
-              <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-              </div>
-            </div>
-            <div class="window-body has-space" style="max-height:150px; overflow-y:auto;">
-              <ul style="padding-left:0; margin:0;">
-                {% for note in notes %}
-                <li style="list-style:none; border-radius:5px; padding:0.5em;">
-                  <strong style="color: {{ note.color }}">{{ note.username }}</strong>: {{ note.content }}
-                </li>
-                {% else %}
-                <li style="display:flex; align-items:center; gap:0.5em;">
-                  <img src="{{ url_for('static', filename='img/icons/vista_info.ico')}}" alt=""
-                    style="width:auto; height:32px; flex-shrink:0;">
-                  <span>No notes yet.</span>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="glass-panel mini">
-        <div class="win7">
-          <div class="window active" style="max-width: 500px; width: 350px;">
-            <div class="title-bar">
-              <div class="title-bar-text">Social Media</div>
-              <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-              </div>
-            </div>
-            <div class="window-body has-space">
-              <h3 style="text-align: center;">My Social Media!1</h3>
-              <div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap;">
-                <a target="_blank" href="https://x.com/astronautmarkus"><img
-                    src="{{ url_for('static', filename='/img/icons/Twitter.png') }}" alt="Twitter"
-                    style="width: 48px; height: 48px;"></a>
-                <a target="_blank" href="https://instagram.com/astronautmarkusdev"><img
-                    src="{{ url_for('static', filename='/img/icons/Instagram.png') }}" alt="Instagram"
-                    style="width: 48px; height: 48px;"></a>
-                <a target="_blank" href="https://discord.gg/VFmTM3CGeW"><img
-                    src="{{ url_for('static', filename='/img/icons/Discord.png') }}" alt="Discord"
-                    style="width: 48px; height: 48px;"></a>
-                <a href="mailto:marcos@reyesandfriends.cl"><img
-                    src="{{ url_for('static', filename='/img/icons/Gmail.png') }}" alt="Email"
-                    style="width: 48px; height: 48px;"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass-panel mini">
-        <h3>Trash Ads (Ignore)</h3>
-        <a href="https://www.youtube.com/watch?v=EKyA3x_yh9A" target="_blank"
-          style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
-          <img src="{{ url_for('static', filename='img/assets/ads/N6KVmek.gif')}}" alt="Trash Ad 1"
-            style="width: 50%; max-width: 200px; height: auto;">
-        </a>
-        <a href="https://www.youtube.com/watch?v=ScpYYPzyRu8" target="_blank"
-          style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
-          <img src="{{ url_for('static', filename='img/assets/ads/jxL4jPh.gif')}}" alt="Trash Ad 2"
-            style="width: 50%; max-width: 200px; height: auto;">
-        </a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
-          style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
-          <img src="{{ url_for('static', filename='img/assets/ads/spamton-ad.gif')}}" alt="Trash Ad 7"
-            style="width: 50%; max-width: 200px; height: auto;">
-        </a>
-        <a href="https://www.youtube.com/watch?v=fhwVE9xYEzw" target="_blank"
-          style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
-          <img src="{{ url_for('static', filename='img/assets/ads/90s_3f0.gif')}}" alt="Trash Ad 69"
-            style="width: 50%; max-width: 200px; height: auto;">
-        </a>
-        <a href="https://www.youtube.com/watch?v=TKfS5zVfGBc" target="_blank"
-          style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
-          <img src="{{ url_for('static', filename='img/assets/ads/200.gif')}}" alt="Trash Ad 77777"
-            style="width: 50%; max-width: 200px; height: auto;">
-        </a>
-      </div>
-
-
-    </aside>
-  </div>
-  </main>
+<div class="footer">
+  <p id="footer-text"></p>
+  <p>Optimized for Netscape Navigator</p>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/tech-stack-tabs.js') }}"></script>
+<script>
+  const footerText = document.getElementById('footer-text');
+  const currentYear = new Date().getFullYear();
+  footerText.textContent = `© 2003 / ${currentYear} Marcos Reyes / Lain Iwakura. All rights reserved.`;
+</script>
 {% endblock %}
