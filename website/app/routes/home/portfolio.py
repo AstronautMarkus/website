@@ -6,3 +6,8 @@ from app.models.models import PortfolioProject, ProjectTechTag
 def portfolio():
     projects = PortfolioProject.query.order_by(PortfolioProject.id.desc()).all()
     return render_template('portfolio.html', projects=projects)
+
+@home_bp.route('/es/portfolio')
+def portfolio_es():
+    projects = PortfolioProject.query.order_by(PortfolioProject.id.desc()).all()
+    return render_template('/es/portfolio.html', projects=projects)

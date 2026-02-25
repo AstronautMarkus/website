@@ -30,3 +30,31 @@ def index():
     random_quote = random.choice(quotes)
 
     return render_template('index.html', age=current_age, born_day=born_day, quote=random_quote)
+
+@home_bp.route('/es')
+def index_es():
+
+    born_day = '16 de marzo de 2003'
+
+    current_year = datetime.now().year
+    born_year = datetime.strptime('2003-03-16', '%Y-%m-%d').year
+
+    current_age = current_year - born_year
+
+    quotes = [
+        "SI EL CÓDIGOS FUNCIONA, ¡NO LO TOQUES! - 2003, CREADO POR UN HUMANO, PARA HUMANOS",
+        "ESPERA, SI EL AMOR ES LA RESPUESTA, ESTÁS EN CASA.",
+        "NO SOY UN ROBOT, SOY UN SER HUMANO.",
+        "EN UN MUNDO DE MALAS PERSONAS, EL MAYOR ACTO DE REBELIÓN ES SER BUENO.",
+        "LA VIDA ES UN VIAJE, DISFRUTA EL CAMINO.",
+        "LA FELICIDAD NO ES UN DESTINO, ES UNA FORMA DE VIAJAR.",
+        "LA VIDA ES DEMASIADO CORTA PARA PREOCUPARSE POR COSAS PEQUEÑAS.",
+        "LA TECNOLOGÍA ES REEMPLAZABLE, LAS PERSONAS NO.",
+        "¿SER FELIZ O ENCAJAR EN LA SOCIEDAD?",
+        "EL DESTINO DE LAS GRANDES ALMAS ES SER CRITICADAS POR LOS MEDIOCRES.",
+        "NO IMPORTA A DÓNDE VAYAS, TODOS ESTÁN CONECTADOS."
+    ]
+
+    random_quote = random.choice(quotes)
+
+    return render_template('/es/index.html', age=current_age, born_day=born_day, quote=random_quote)

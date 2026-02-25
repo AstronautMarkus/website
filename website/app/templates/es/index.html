@@ -1,0 +1,67 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Marcos Reyes - Desarrollador Full Stack & Administrador de Sistemas{% endblock %}
+{% block description %}Sitio web personal de Marcos Reyes, desarrollador full stack y administrador de sistemas enfocado en soluciones de software escalables, seguras y de alto rendimiento.{% endblock %}
+{% block keywords %}Marcos Reyes, desarrollador full stack, administrador de sistemas, portafolio, Python, Laravel, React, Docker{% endblock %}
+
+{% block content %}
+<div>
+    <h1>SITIO WEB DE MARCOS REYES</h1>
+    <i>AstronautMarkus.Dev</i>
+</div>
+
+<img
+    src="https://count.getloli.com/@astronautmarkusdev?name=astronautmarkusdev&theme=booru-jaypee&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto"
+    alt="Contador de Visitantes">
+
+<marquee class="marquee">{{ quote }}</marquee>
+
+<div class="container">
+    <img src="{{ url_for('static', filename='img/profile.jpg') }}" class="profile-picture" alt="Marcos Reyes">
+    <h2>ACERCA DE MÍ</h2>
+    <p>Desarrollador Full Stack & Administrador de Sistemas | Innovación, Rendimiento y Seguridad
+        Creo soluciones tecnológicas de alto impacto, desde SaaS hasta plataformas de hosting y comercio electrónico,
+        combinando React, Laravel, Python y Docker con metodologías Agile. Lidero equipos, optimizo procesos y construyo
+        software confiable, seguro y escalable que realmente transforma negocios.
+    </p>
+
+    <i>Nací el {{ born_day }} y tengo {{ age }} años de edad.</i> <br>
+
+    <p>
+        Mi videojuego favorito es <a class="payday-game-a" href="https://store.steampowered.com/agecheck/app/218620/" target="_blank">PAYDAY2</a>. Nunca me aburro de su jugabilidad simple y repetitiva, la música es excelente.
+    </p>
+
+    <a href="https://github.com/astronautmarkus" target="_blank">
+        <img src="{{ url_for('static', filename='img/88x31_buttons/github-check.gif') }}" alt="GitHub">
+    </a>
+</div>
+
+<div class="container">
+    <h2>LO QUE HAGO</h2>
+    <p>
+        Me especializo en construir aplicaciones web de alto rendimiento e infraestructura escalable. Mi experiencia incluye:
+    <ul style="list-style-type: square;">
+        <li>Desarrollo Full Stack: React, Laravel, Python</li>
+        <li>Administración de Sistemas: Linux, Docker, Nginx, Apache</li>
+        <li>Redes / IoT: FortiGate, TP-Link, Raspberry Pi, ESP32</li>
+        <li>Metodologías Agile: Scrum, Kanban</li>
+        <li>Servicios en la Nube: AWS, Oracle</li>
+    </ul>
+    </p>
+</div>
+
+<div>
+    <p>Sitio web creado usando </p>
+    <a href="https://www.mysql.com/" target="_blank"><img
+            src="{{ url_for('static', filename='img/88x31_buttons/mysql-88x31.gif') }}" alt="MySQL"></a>
+    <a href="https://flask.palletsprojects.com/" target="_blank"><img
+            src="{{ url_for('static', filename='img/88x31_buttons/flask.gif') }}" alt="Flask"></a>
+    <a href="https://code.visualstudio.com/" target="_blank"><img
+            src="{{ url_for('static', filename='img/88x31_buttons/vscbutton.gif') }}" alt="Visual Studio Code"></a>
+    <a href="https://linuxmint.com/" target="_blank"><img
+            src="{{ url_for('static', filename='img/88x31_buttons/linux_mint.gif') }}" alt="Linux Mint"></a>
+    <a href="https://nginx.org/" target="_blank"><img
+            src="{{ url_for('static', filename='img/88x31_buttons/nginx.png') }}" alt="Nginx"></a>
+</div>
+
+{% endblock %}

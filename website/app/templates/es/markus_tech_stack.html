@@ -1,0 +1,37 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Tech Stack de Markus - Herramientas y Tecnologías{% endblock %}
+{% block description %}Explora las tecnologías de desarrollo, hosting y aprendizaje utilizadas por Marcos Reyes, incluyendo frameworks, herramientas de infraestructura y plataformas.{% endblock %}
+{% block keywords %}tech stack, Marcos Reyes, herramientas de desarrollo, tecnologías de hosting, frameworks, infraestructura, ingeniería de software{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Tech Stack de Markus</h1>
+    <i>El stack que uso para desarrollo, hosting y aprendizaje</i>
+</div>
+
+<div class="container">
+    {% for tech_type, items in techstack_by_type.items() %}
+    <h2 class="tech-type-title">{{ tech_type }}</h2>
+    <table class="tech-table">
+        <thead>
+            <tr>
+                <th>Tecnología</th>
+                <th>Tipo de Tecnología</th>
+                <th>Opinión</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tech in items %}
+            <tr>
+                <td>{{ tech.name }}</td>
+                <td>{{ tech.tech_type }}</td>
+                <td>{{ tech.opinion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
+</div>
+
+{% endblock %}
