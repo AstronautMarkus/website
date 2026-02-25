@@ -1,14 +1,21 @@
 import os
 import sys
+import json
 
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, project_root)
 
 from app import create_app
 from app.models.models import db
-
-import json
-from app.models.models import TechStack, PortfolioProject, TechTag, ProjectTechTag
+from app.models.models import (
+    TechStack,
+    PortfolioProject,
+    TechTag,
+    ProjectTechTag,
+    WorkExperience,
+    ExperienceTechnology,
+    WorkExperienceTechnology,
+)
 
 def load_techstack_data():
     json_path = os.path.join(os.path.dirname(__file__), 'techstack_data.json')
@@ -19,6 +26,14 @@ def load_portfolio_data():
     json_path = os.path.join(os.path.dirname(__file__), 'portfolio_data.json')
     with open(json_path, 'r', encoding='utf-8') as f:
         return json.load(f)
+
+def load_working_experience_data():
+    json_path = os.path.join(os.path.dirname(__file__), 'working_experience_data.json')
+    with open(json_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def is_blank(value):
+    return value is None or (isinstance(value, str) and value.strip() == '')
 
 def init_database():
     """Initialize the database by creating tables and inserting tech stack and portfolio data."""
@@ -61,6 +76,57 @@ def init_database():
                 db.session.add(ProjectTechTag(project_id=p.id, tech_tag_id=tag_id))
         db.session.commit()
         print("Portfolio projects and tags inserted.")
+        # Insert working experience and technologies
+        working_experience_data = load_working_experience_data()
+        for experience in working_experience_data:
+            if is_blank(experience.get('name')) and is_blank(experience.get('description')):
+                continue
+
+            work_experience = WorkExperience.query.filter_by(
+                name=experience['name'],
+                type_of_project=experience['type_of_project']
+            ).first()
+
+            if not work_experience:
+                work_experience = WorkExperience(
+                    name=experience['name'],
+                    spanish_name=experience['spanish_name'],
+                    description=experience['description'],
+                    spanish_description=experience['spanish_description'],
+                    type_of_project=experience['type_of_project'],
+                    spanish_type_of_project=experience['spanish_type_of_project'],
+                    role_that_i_had=experience['role_that_i_had'],
+                    spanish_role_that_i_had=experience['spanish_role_that_i_had']
+                )
+                db.session.add(work_experience)
+                db.session.flush()
+
+            for tech in experience.get('technologies_used', []):
+                tech_name = (tech.get('name') or '').strip()
+                if not tech_name:
+                    continue
+
+                technology = ExperienceTechnology.query.filter_by(name=tech_name).first()
+                if not technology:
+                    technology = ExperienceTechnology(name=tech_name)
+                    db.session.add(technology)
+                    db.session.flush()
+
+                relation_exists = WorkExperienceTechnology.query.filter_by(
+                    work_experience_id=work_experience.id,
+                    experience_technology_id=technology.id
+                ).first()
+
+                if not relation_exists:
+                    db.session.add(
+                        WorkExperienceTechnology(
+                            work_experience_id=work_experience.id,
+                            experience_technology_id=technology.id
+                        )
+                    )
+
+        db.session.commit()
+        print("Working experience data inserted.")
 
 def reset_database():
     """Delete all tables and recreate them."""

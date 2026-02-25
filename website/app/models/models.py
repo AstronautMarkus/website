@@ -33,3 +33,24 @@ class ProjectTechTag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     project_id = db.Column(db.Integer, db.ForeignKey('portfolio_project.id'), nullable=False)
     tech_tag_id = db.Column(db.Integer, db.ForeignKey('tech_tag.id'), nullable=False)
+
+class WorkExperience(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    spanish_name = db.Column(db.String(120), nullable=False)
+    description = db.Column(db.String(1200), nullable=False)
+    spanish_description = db.Column(db.String(1200), nullable=False)
+    type_of_project = db.Column(db.String(300), nullable=False)
+    spanish_type_of_project = db.Column(db.String(300), nullable=False)
+    role_that_i_had = db.Column(db.String(200), nullable=False)
+    spanish_role_that_i_had = db.Column(db.String(200), nullable=False)
+    technologies = db.relationship('ExperienceTechnology', secondary='work_experience_technology', backref='work_experiences')
+
+class ExperienceTechnology(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+
+class WorkExperienceTechnology(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    work_experience_id = db.Column(db.Integer, db.ForeignKey('work_experience.id'), nullable=False)
+    experience_technology_id = db.Column(db.Integer, db.ForeignKey('experience_technology.id'), nullable=False)

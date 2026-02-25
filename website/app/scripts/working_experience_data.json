@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Transportes Luis Gómez",
+        "spanish_name": "Transportes Luis Gómez",
+        "description": "The company needed a web platform to share its services and completed projects, as well as a 24-hour status update system. A modern, visually appealing, and scalable landing page was created.",
+        "spanish_description": "La empresa necesitaba una plataforma web para compartir sus servicios y proyectos realizados, así como un sistema de actualización de estado las 24 horas. Se creó una página de aterrizaje moderna, visualmente atractiva y escalable.",
+        "type_of_project": "A web landing page for a truck transport company.",
+        "spanish_type_of_project": "Una página de aterrizaje web para una empresa de transporte de camiones.",
+        "role_that_i_had": "Full Stack Developer / Project Manager",
+        "spanish_role_that_i_had": "Desarrollador Full Stack / Gerente de Proyecto",
+        "technologies_used": [
+            {
+                "name": "Laravel"
+            },
+            {
+                "name": "Tailwind CSS"
+            },
+            {
+                "name": "MySQL"
+            },
+            {
+                "name": "PHP"
+            },
+            {
+                "name": "JavaScript"
+            }
+        ]
+    }
+]

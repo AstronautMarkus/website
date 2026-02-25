@@ -1,0 +1,56 @@
+{% extends "layout/base.html" %}
+{% block title %}Working and Experience Data - Marcos Reyes{% endblock %}
+{% block description %}Explore the working experience and project data of Marcos Reyes, a passionate developer. Learn
+about his professional background, skills, and technical contributions.{% endblock %}
+{% block keywords %}working experience, experience data, projects, Marcos Reyes, developer, skills, technical
+contributions{% endblock %}
+
+{% block content %}
+<h1>Working and Experience Data</h1>
+<p>Details about my working experience and project data.</p>
+
+<div class="container">
+    <p>If you are a recruiter or simply interested in what I have done, welcome to this section, where you can see a
+        table with the jobs or projects I have done.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Type of Project</th>
+                <th>Role that I had</th>
+                <th>Technologies Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if projects|length == 0 %}
+            <tr>
+                <td colspan="5" style="text-align: center;">No projects available. I guess I am still a baby in the world of working experience!</td>
+            </tr>
+            {% else %}
+            {% for project in projects %}
+            <tr>
+                <td>{{ project.name }}</td>
+                <td>{{ project.description }}</td>
+                <td>{{ project.type_of_project }}</td>
+                <td>{{ project.role_that_i_had }}</td>
+                <td>
+                    {% if project.technologies|length == 0 %}
+                    N/A
+                    {% else %}
+                        {% for technology in project.technologies %}
+                            {{ technology.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+
+
+</div>
+
+{% endblock %}
