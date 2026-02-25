@@ -78,6 +78,29 @@ button:active {
   transform: translate(1px, 1px);
 }
 
+#locale-toggle-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#locale-toggle-button:hover,
+#locale-toggle-button:active {
+  background: transparent;
+  transform: none;
+  border: none;
+}
+
+#locale-toggle-image {
+  display: block;
+}
+
 .marquee {
   color: #ff6a00;
   font-weight: bold;

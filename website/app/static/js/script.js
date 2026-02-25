@@ -1,7 +1,9 @@
 const footerText = document.getElementById('footer-text');
 const routePathContainer = document.getElementById('route-path');
+const localeToggleButton = document.getElementById('locale-toggle-button');
+const localeToggleImage = document.getElementById('locale-toggle-image');
 const currentYear = new Date().getFullYear();
-footerText.textContent = `© 2003 / ${currentYear} Marcos Reyes / Lain Iwakura. All rights reserved.`;
+footerText.textContent = `© 16-03-2003 / ${currentYear} Marcos Reyes / AstronautMarkusDev. All rights reserved.`;
 
 const normalizePath = (path) => {
     if (!path) {
@@ -46,6 +48,42 @@ const getRouteContext = (pathname) => {
 const routeContext = getRouteContext(window.location.pathname);
 const route = routeContext.route;
 const isSpanish = routeContext.locale === 'es';
+
+const getLocaleToggleTargetPath = () => {
+    if (isSpanish) {
+        return route === '/' ? '/' : route;
+    }
+
+    return route === '/' ? '/es' : `/es${route}`;
+};
+
+const toggleButtonConfig = {
+    en: {
+        imagePath: localeToggleButton?.dataset.imageEn,
+        imageAlt: 'Español',
+        buttonLabel: 'Cambiar a español'
+    },
+    es: {
+        imagePath: localeToggleButton?.dataset.imageEs,
+        imageAlt: 'English',
+        buttonLabel: 'Change to English'
+    }
+};
+
+if (localeToggleButton && localeToggleImage) {
+    const config = isSpanish ? toggleButtonConfig.es : toggleButtonConfig.en;
+    if (config.imagePath) {
+        localeToggleImage.src = config.imagePath;
+    }
+    localeToggleImage.alt = config.imageAlt;
+    localeToggleButton.setAttribute('aria-label', config.buttonLabel);
+
+    localeToggleButton.addEventListener('click', () => {
+        const targetPath = getLocaleToggleTargetPath();
+        const targetUrl = `${targetPath}${window.location.search}${window.location.hash}`;
+        window.location.href = targetUrl;
+    });
+}
 
 const texts = {
     availableRoutes: isSpanish ? 'Rutas disponibles' : 'Available routes',

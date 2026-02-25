@@ -28,6 +28,15 @@
 </head>
 
 <body>
+    <button
+        id="locale-toggle-button"
+        type="button"
+        aria-label="Cambiar idioma"
+        data-image-en="{{ url_for('static', filename='img/88x31_buttons/espanol.gif') }}"
+        data-image-es="{{ url_for('static', filename='img/88x31_buttons/virusalert.gif') }}"
+    >
+        <img id="locale-toggle-image" src="{{ url_for('static', filename='img/88x31_buttons/espanol.gif') }}" alt="Cambiar idioma">
+    </button>
     {% block content %}{% endblock %}
 
     {% block scripts %}{% endblock %}
