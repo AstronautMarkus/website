@@ -8,6 +8,8 @@
     <meta name="keywords" content="{% block keywords %}Marcos Reyes, developer, portfolio, tech{% endblock %}">
     <meta name="author" content="Marcos Reyes">
     
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}" type="image/x-icon">
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ self.title() | striptags | trim }}">
     <meta property="og:description" content="{{ self.description() | striptags | trim }}">
