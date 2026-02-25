@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_mail import Mail
@@ -21,5 +21,9 @@ def create_app():
 
 	from app.routes.home import home_bp
 	app.register_blueprint(home_bp)
+
+	@app.errorhandler(404)
+	def not_found(error):
+		return render_template('404.html'), 404
 
 	return app
