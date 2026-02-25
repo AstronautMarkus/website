@@ -202,3 +202,12 @@ a {
   text-shadow: 1px 1px 0 #3a0d00;
   font-size: 18px;
 }
+
+.payday-game-a {
+  color: #008cff;
+  font-weight: bold;
+}
+
+.payday-game-a:hover {
+  text-decoration: underline;
+}
