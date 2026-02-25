@@ -12,13 +12,16 @@ class TechStack(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     type = db.Column(db.String(50), nullable=False)
+    spanish_type = db.Column(db.String(50), nullable=False)
     tech_type = db.Column(db.String(50), nullable=False)
     opinion = db.Column(db.String(500), nullable=False)
+    spanish_opinion = db.Column(db.String(500), nullable=False)
 
 class PortfolioProject (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(500), nullable=False)
+    spanish_description = db.Column(db.String(500), nullable=False)
     project_url = db.Column(db.String(200), nullable=True)
     tech_tags = db.relationship('TechTag', secondary='project_tech_tag', backref='projects')
 

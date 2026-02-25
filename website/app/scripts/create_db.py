@@ -52,6 +52,7 @@ def init_database():
             p = PortfolioProject(
                 title=project['title'],
                 description=project['description'],
+                spanish_description=project['spanish_description'],
                 project_url=project['project_url']
             )
             db.session.add(p)
