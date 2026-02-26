@@ -6,10 +6,10 @@ import random
 @home_bp.route('/')
 def index():
 
-    born_day = '2003-03-16'
+    born_day = 'March 16, 2003'
 
     current_year = datetime.now().year
-    born_year = datetime.strptime(born_day, '%Y-%m-%d').year
+    born_year = datetime.strptime('2003-03-16', '%Y-%m-%d').year
 
     current_age = current_year - born_year
 
