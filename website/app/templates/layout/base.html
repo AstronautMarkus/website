@@ -45,26 +45,7 @@
 
     {% include 'layout/components/available_routes.html' %}
 
-    <div class="footer">
-        <p id="footer-text">
-            {% if is_spanish %}
-                © 16-03-2003 / {{ current_year }} Marcos Reyes / AstronautMarkusDev. Todos los derechos reservados.
-            {% else %}
-                © 16-03-2003 / {{ current_year }} Marcos Reyes / AstronautMarkusDev. All rights reserved.
-            {% endif %}
-        </p>
-        <p id="ending-text">
-            <span>
-                {% if is_spanish %}
-                Este sitio web no está optimizado para diseño responsivo. Y nunca lo estará.
-                {% else %}
-                This website is not optimized for responsive design. And will never be.
-                {% endif %}
-            </span>
-            <img src="{{ url_for('static', filename='img/smilleys/laugh3.gif') }}" alt="Laugh Smilley"
-                style="margin-left: 8px;">
-        </p>
-    </div>
+    {% include 'layout/components/footer.html' %}
 
     <img src="{{ url_for('static', filename='img/earth.png')}}" alt="Earth" class="earth-image">
 
