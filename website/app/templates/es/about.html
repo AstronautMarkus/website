@@ -19,4 +19,20 @@ detrás de compartir proyectos y recursos.{% endblock %}
     <i>Deuteronomio 31:6 </i>
     <p>Sé fuerte y valiente. No tengas miedo ni te atemorices por ellos, porque el Señor tu Dios va contigo; nunca te dejará ni te abandonará.</p>
 </div>
+
+<div class="container">
+    <h3>Detalles Técnicos del Sitio Web</h3>
+    <p>Este sitio web está construido usando Flask, un framework web ligero para Python. Utiliza Jinja2 para renderizar
+        páginas HTML y está estilizado con CSS. El objetivo de este sitio web es que el programa no pese más de 1MB
+        en tamaño absoluto, para tener un sitio web de estilo de los 90s y ser súper rápido. <img
+            src="{{ url_for('static', filename='img/smilleys/jester.gif')}}" alt="gif de bufón"></p>
+    <ul>
+        <li><strong>Framework:</strong> Flask</li>
+        <li><strong>Motor de Plantillas:</strong> Jinja2</li>
+        <li><strong>Estilos:</strong> CSS, sin frameworks, sin responsivo</li>
+        <li><strong>Contenedor:</strong> Docker + Docker Compose</li>
+        <li><strong>Servidor HTTP:</strong> Nginx (front-end) + Apache (back-end)</li>
+        <li><strong>Tamaño del Sitio Web:</strong> < 1MB</li>
+    </ul>
+</div>
 {% endblock %}
