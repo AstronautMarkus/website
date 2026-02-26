@@ -1,0 +1,49 @@
+{% set current_endpoint = request.endpoint or '' %}
+{% set is_home_endpoint = current_endpoint in ['home.index', 'home.index_es'] %}
+{% set static_routes = [
+{
+'endpoint_en': 'home.about',
+'endpoint_es': 'home.about_es',
+'label_en': 'About Website',
+'label_es': 'Acerca del sitio web'
+},
+{
+'endpoint_en': 'home.markus_tech_stack',
+'endpoint_es': 'home.markus_tech_stack_es',
+'label_en': 'Markus Tech Stack',
+'label_es': 'Tech Stack de Markus'
+},
+{
+'endpoint_en': 'home.portfolio',
+'endpoint_es': 'home.portfolio_es',
+'label_en': 'Portfolio',
+'label_es': 'Portafolio'
+},
+{
+'endpoint_en': 'home.work_and_experience',
+'endpoint_es': 'home.work_and_experience_es',
+'label_en': 'Work and Experience',
+'label_es': 'Trabajo y experiencia'
+},
+{
+'endpoint_en': 'home.external_links',
+'endpoint_es': 'home.external_links_es',
+'label_en': 'External Links',
+'label_es': 'Enlaces externos'
+}
+] %}
+
+<div class="container">
+    {% if is_home_endpoint %}
+    <h4>{{ 'Rutas disponibles' if is_spanish else 'Available routes' }}</h4>
+    {% for item in static_routes %}
+    <a href="{{ url_for(item.endpoint_es if is_spanish else item.endpoint_en) }}" class="route-button">
+        {{ item.label_es if is_spanish else item.label_en }}
+    </a>
+    {% endfor %}
+    {% else %}
+    <a href="{{ url_for('home.index_es' if is_spanish else 'home.index') }}" class="route-button">
+        {{ 'Volver al inicio' if is_spanish else 'Back Home' }}
+    </a>
+    {% endif %}
+</div>

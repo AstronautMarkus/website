@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_mail import Mail
+from datetime import datetime
 from app.config.config import Config
 from werkzeug.middleware.proxy_fix import ProxyFix
 
@@ -28,5 +29,9 @@ def create_app():
 	@app.errorhandler(404)
 	def not_found(error):
 		return render_template('404.html'), 404
+
+	@app.context_processor
+	def inject_current_year():
+		return {'current_year': datetime.now().year}
 
 	return app
