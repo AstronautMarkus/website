@@ -243,3 +243,14 @@ table tbody tr:hover {
   gap: 20px;
   margin-top: 20px;
 }
+
+.earth-image {
+  position: absolute;
+  bottom: 35px;
+  left: calc(90% - 35px);
+  width: 80px;
+  height: 80px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: -1;
+}

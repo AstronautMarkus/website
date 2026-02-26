@@ -6,6 +6,7 @@ const endingImagePath = '/static/img/smilleys/laugh3.gif';
 const routePathContainer = document.getElementById('route-path');
 const localeToggleButton = document.getElementById('locale-toggle-button');
 const localeToggleImage = document.getElementById('locale-toggle-image');
+const earthImage = document.querySelector('.earth-image');
 const currentYear = new Date().getFullYear();
 
 const footer_text = `© 16-03-2003 / ${currentYear} Marcos Reyes / AstronautMarkusDev. All rights reserved.`;
@@ -179,4 +180,11 @@ if (route === '/') {
 
 if (routePathContainer) {
     routePathContainer.appendChild(buttonsWrapper);
+}
+
+if (earthImage) {
+    const randomLeftOffset = Math.random() * 30 + 20;
+    const randomBottomOffset = Math.random() * 30 + 20;
+    earthImage.style.left = `calc(90% - ${randomLeftOffset}px)`;
+    earthImage.style.bottom = `${randomBottomOffset}px`;
 }
