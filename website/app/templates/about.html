@@ -27,7 +27,7 @@ behind sharing projects and resources.{% endblock %}
     <p>This website is built using Flask, a lightweight web framework for Python. It uses Jinja2 templating to render
         HTML pages and is styled with CSS. The objective of this website is The program should not weigh more than 1MB
         in absolute size, in order to have a 90s style website and be super fast. <img
-            src="{{ url_for('static', filename='img/smilleys/jester.gif')}}" alt="jester gif"></p>
+            src="{{ url_for('static', filename='img/smilleys/jester.gif')}}" alt="Jester gif"></p>
     <ul>
         <li><strong>Framework:</strong> Flask</li>
         <li><strong>Templating Engine:</strong> Jinja2</li>
@@ -37,6 +37,49 @@ behind sharing projects and resources.{% endblock %}
         <li><strong>Website Size:</strong>
             < 1MB</li>
     </ul>
+</div>
+
+<div class="container">
+    <h3>License</h3>
+    <p>MIT License? Nuh uh. <img src="{{ url_for('static', filename='img/smilleys/no2.gif')}}" alt="No gif"> This
+        website and all its content are licensed under the <strong>Do What The F*ck You Want To Public License</strong>
+        (WTFPL), because I'm a rebel, I guess, mom.</p>
+    <i>Please check the <strong><a href="https://github.com/astronautmarkus/website/tree/main/LICENSE" target="_blank"
+                class="route-button">LICENSE</a></strong> file on GitHub for more details.</i>
+</div>
+
+<div class="container">
+    <h3>Personal</h3>
+    <p>There's not much to say about me, I'm not very extroverted or sociable, I just do what I like, which is the IT
+        side and everything related to technology and telecommunications.</p>
+    <i>I am Chilean, I like cats and dogs that are not too energetic or obsessive with you.</i>
+    <p>
+        I have a lot of hobbies, for example, I like the networking side, I like to learn about new technologies, I like
+        the radio, The only things I don't enjoy much anymore are playing video games and watching TV. Playing games
+        doesn't give me the same dopamine rush as before; now only technology does.
+    </p>
+    <i>
+        And forget about TV—that doesn't do anything for me at all. <img
+            src="{{ url_for('static', filename='img/tenna.gif')}}" style="width: 50px;" alt="Tenna">
+    </i>
+</div>
+
+<div class="container">
+    <h3>College</h3>
+    <p>
+        In January 2022, I chose to study computer programmer analyst on a whim, without questioning it more than twice.
+        During that time, until July 2025 when I graduated, I experienced everything: happiness, anger, sadness, rage,
+        stress, injustice—everything one can imagine from the university world. But thanks to that foundation, I now
+        know so much more on my own. That's the beauty of it, isn't it?
+    </p>
+</div>
+
+<div class="container">
+    <h3>Contact</h3>
+    <p>
+        If you want to contact me, please visit the <strong><a href="{{ url_for('home.contact') }}"
+                class="route-button">Contact</a></strong> page. Easy peasy.
+    </p>
 </div>
 
 {% endblock %}

@@ -10,5 +10,6 @@ from . import (
     work_and_experience,
     cv_and_documents,
     working_experience_data,
-    external_links
+    external_links,
+    contact
 )

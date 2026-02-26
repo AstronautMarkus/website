@@ -254,3 +254,80 @@ table tbody tr:hover {
   pointer-events: none;
   z-index: -1;
 }
+
+form {
+  margin: 25px auto;
+  padding: 18px;
+  text-align: left;
+  background: #45457b;
+  border: 2px solid #8f8fa8;
+  border-top-color: #dedee8;
+  border-left-color: #dedee8;
+  border-right-color: #595968;
+  border-bottom-color: #595968;
+  box-shadow: inset 1px 1px 0 #ffffff22, inset -1px -1px 0 #00000066;
+}
+
+label {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #e7e7ff;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 13px;
+  background: #e5e5e5;
+  border: 2px solid #4b4b66;
+  border-top-color: #595968;
+  border-left-color: #595968;
+  border-right-color: #a2a2bc;
+  border-bottom-color: #a2a2bc;
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #313140;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-top-color: #a2a2bc;
+  border-left-color: #a2a2bc;
+  border-right-color: #595968;
+  border-bottom-color: #595968;
+  color: black;
+}
+
+.alert {
+  margin: 0;
+  padding: 16px;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
