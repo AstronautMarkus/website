@@ -1,14 +1,17 @@
 {% extends "layout/base.html" %}
 {% block title %}Datos de Experiencia Laboral - Marcos Reyes{% endblock %}
-{% block description %}Explora la experiencia laboral y los datos de proyectos de Marcos Reyes, un desarrollador apasionado. Conoce su trayectoria profesional, habilidades y contribuciones técnicas.{% endblock %}
-{% block keywords %}experiencia laboral, datos de experiencia, proyectos, Marcos Reyes, desarrollador, habilidades, contribuciones técnicas{% endblock %}
+{% block description %}Explora la experiencia laboral y los datos de proyectos de Marcos Reyes, un desarrollador
+apasionado. Conoce su trayectoria profesional, habilidades y contribuciones técnicas.{% endblock %}
+{% block keywords %}experiencia laboral, datos de experiencia, proyectos, Marcos Reyes, desarrollador, habilidades,
+contribuciones técnicas{% endblock %}
 
 {% block content %}
 <h1>Datos de Experiencia Laboral</h1>
 <p>Detalles sobre mi experiencia laboral y proyectos.</p>
 
 <div class="container">
-	<p>Si eres reclutador o simplemente te interesa lo que he hecho, bienvenido a esta sección, donde puedes ver una tabla con los trabajos o proyectos que he realizado.</p>
+	<p>Si eres reclutador o simplemente te interesa lo que he hecho, bienvenido a esta sección, donde puedes ver una
+		tabla con los trabajos o proyectos que he realizado.</p>
 
 	<table>
 		<thead>
@@ -23,7 +26,8 @@
 		<tbody>
 			{% if projects|length == 0 %}
 			<tr>
-				<td colspan="5" style="text-align: center;">No hay proyectos disponibles. ¡Supongo que todavía soy un bebé en el mundo de la experiencia laboral!</td>
+				<td colspan="5" style="text-align: center;">No hay proyectos disponibles. ¡Supongo que todavía soy un
+					bebé en el mundo de la experiencia laboral!</td>
 			</tr>
 			{% else %}
 			{% for project in projects %}
@@ -36,9 +40,9 @@
 					{% if project.technologies|length == 0 %}
 					N/A
 					{% else %}
-						{% for technology in project.technologies %}
-							{{ technology.name }}{% if not loop.last %}, {% endif %}
-						{% endfor %}
+					{% for technology in project.technologies %}
+					{{ technology.name }}{% if not loop.last %}, {% endif %}
+					{% endfor %}
 					{% endif %}
 				</td>
 			</tr>
@@ -46,6 +50,9 @@
 			{% endif %}
 		</tbody>
 	</table>
+
+	<a href="{{ url_for('home.work_and_experience_es')}}" class="route-button">Regresar</a>
+
 </div>
 
 {% endblock %}

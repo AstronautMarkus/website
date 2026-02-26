@@ -26,7 +26,8 @@ contributions{% endblock %}
         <tbody>
             {% if projects|length == 0 %}
             <tr>
-                <td colspan="5" style="text-align: center;">No projects available. I guess I am still a baby in the world of working experience!</td>
+                <td colspan="5" style="text-align: center;">No projects available. I guess I am still a baby in the
+                    world of working experience!</td>
             </tr>
             {% else %}
             {% for project in projects %}
@@ -39,9 +40,9 @@ contributions{% endblock %}
                     {% if project.technologies|length == 0 %}
                     N/A
                     {% else %}
-                        {% for technology in project.technologies %}
-                            {{ technology.name }}{% if not loop.last %}, {% endif %}
-                        {% endfor %}
+                    {% for technology in project.technologies %}
+                    {{ technology.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </td>
             </tr>
@@ -49,6 +50,8 @@ contributions{% endblock %}
             {% endif %}
         </tbody>
     </table>
+
+    <a href="{{ url_for('home.work_and_experience')}}" class="route-button">Go Back</a>
 
 
 </div>
