@@ -1,7 +1,5 @@
 const localeToggleButton = document.getElementById('locale-toggle-button');
 const localeToggleImage = document.getElementById('locale-toggle-image');
-const earthImage = document.querySelector('.earth-image');
-const moonImage = document.querySelector('.moon-image');
 
 const normalizePath = (path) => {
     if (!path) {
@@ -15,39 +13,11 @@ const normalizePath = (path) => {
     return path;
 };
 
-const getRouteContext = (pathname) => {
-    const normalizedPath = normalizePath(pathname);
+const currentPath = normalizePath(window.location.pathname);
+const isSpanish = currentPath === '/es' || currentPath.startsWith('/es/');
+const route = isSpanish ? normalizePath(currentPath.slice(3) || '/') : currentPath;
 
-    if (normalizedPath === '/es') {
-        return {
-            locale: 'es',
-            localePrefix: '/es',
-            route: '/'
-        };
-    }
-
-    if (normalizedPath.startsWith('/es/')) {
-        const routeWithoutPrefix = normalizedPath.slice(3) || '/';
-
-        return {
-            locale: 'es',
-            localePrefix: '/es',
-            route: normalizePath(routeWithoutPrefix)
-        };
-    }
-
-    return {
-        locale: 'en',
-        localePrefix: '',
-        route: normalizedPath
-    };
-};
-
-const routeContext = getRouteContext(window.location.pathname);
-const route = routeContext.route;
-const isSpanish = routeContext.locale === 'es';
-
-const getLocaleToggleTargetPath = () => {
+const getLocaleTargetPath = () => {
     if (isSpanish) {
         return route === '/' ? '/' : route;
     }
@@ -55,47 +25,23 @@ const getLocaleToggleTargetPath = () => {
     return route === '/' ? '/es' : `/es${route}`;
 };
 
-const toggleButtonConfig = {
-    en: {
-        imagePath: localeToggleButton?.dataset.imageEn,
-        imageAlt: 'Español',
-        buttonLabel: 'Cambiar a español'
-    },
-    es: {
-        imagePath: localeToggleButton?.dataset.imageEs,
-        imageAlt: 'English',
-        buttonLabel: 'Change to English'
-    }
-};
-
 if (localeToggleButton && localeToggleImage) {
-    const config = isSpanish ? toggleButtonConfig.es : toggleButtonConfig.en;
-    if (config.imagePath) {
-        localeToggleImage.src = config.imagePath;
+    const imagePath = isSpanish
+        ? localeToggleButton.dataset.imageEs
+        : localeToggleButton.dataset.imageEn;
+    const imageAlt = isSpanish ? 'English' : 'Español';
+    const buttonLabel = isSpanish ? 'Change to English' : 'Cambiar a español';
+
+    if (imagePath) {
+        localeToggleImage.src = imagePath;
     }
-    localeToggleImage.alt = config.imageAlt;
-    localeToggleButton.setAttribute('aria-label', config.buttonLabel);
+    localeToggleImage.alt = imageAlt;
+    localeToggleButton.setAttribute('aria-label', buttonLabel);
 
     localeToggleButton.addEventListener('click', () => {
-        const targetPath = getLocaleToggleTargetPath();
+        const targetPath = getLocaleTargetPath();
         const targetUrl = `${targetPath}${window.location.search}${window.location.hash}`;
         window.location.href = targetUrl;
     });
 }
 
-if (earthImage || moonImage) {
-    const earthLeftOffset = Math.random() * 30 + 20;
-    const earthBottomOffset = Math.random() * 30 + 20;
-
-    if (earthImage) {
-        earthImage.style.left = `calc(90% - ${earthLeftOffset}px)`;
-        earthImage.style.bottom = `${earthBottomOffset}px`;
-    }
-
-    if (moonImage) {
-        const moonDistanceX = Math.random() * 16 + 42;
-        const moonDistanceY = Math.random() * 14 + 24;
-        moonImage.style.left = `calc(90% - ${earthLeftOffset + moonDistanceX}px)`;
-        moonImage.style.bottom = `${earthBottomOffset + moonDistanceY}px`;
-    }
-}
