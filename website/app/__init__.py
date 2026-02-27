@@ -19,6 +19,8 @@ def create_app():
 	mail.init_app(app)
 
 	app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)
+	from app.middleware.register_visit import init_visit_middleware
+	init_visit_middleware(app)
 
 	from app.routes.home import home_bp
 	app.register_blueprint(home_bp)
