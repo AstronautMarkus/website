@@ -84,4 +84,10 @@
     <changefreq>yearly</changefreq>
     <lastmod>2026-02-27</lastmod>
   </url>
+  <url>
+    <loc>https://astronautmarkus.dev/work-and-experience/manifesto</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+    <lastmod>2026-02-27</lastmod>
+  </url>
 </urlset>

@@ -7,4 +7,5 @@ from . import (
     why_static,
     why_not_frameworks,
     why_i_build,
+    manifesto,
 )
