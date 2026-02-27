@@ -1,0 +1,8 @@
+from flask import Blueprint
+
+philosophy_bp = Blueprint('philosophy', __name__)
+
+from . import (
+    index,
+    why_static,
+)

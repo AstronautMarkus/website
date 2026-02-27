@@ -25,6 +25,9 @@ def create_app():
 	from app.routes.home import home_bp
 	app.register_blueprint(home_bp)
 
+	from app.routes.philosophy import philosophy_bp
+	app.register_blueprint(philosophy_bp)
+
 	from app.routes.utils import utils_bp
 	app.register_blueprint(utils_bp)
 
