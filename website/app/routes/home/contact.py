@@ -6,11 +6,11 @@ from . import home_bp
 
 @home_bp.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return render_template('/home/contact.html')
 
 @home_bp.route('/es/contact')
 def contact_es():
-    return render_template('/es/contact.html')
+    return render_template('/home/es/contact.html')
 
 
 @home_bp.route('/contact/submit', methods=['POST'])

@@ -44,8 +44,8 @@ def build_techstack_by_type(use_spanish=False):
 
 @home_bp.route('/markus-tech-stack')
 def markus_tech_stack():
-    return render_template('markus_tech_stack.html', techstack_by_type=build_techstack_by_type())
+    return render_template('/home/markus_tech_stack.html', techstack_by_type=build_techstack_by_type())
 
 @home_bp.route('/es/markus-tech-stack')
 def markus_tech_stack_es():
-    return render_template('es/markus_tech_stack.html', techstack_by_type=build_techstack_by_type(use_spanish=True))
+    return render_template('/home/es/markus_tech_stack.html', techstack_by_type=build_techstack_by_type(use_spanish=True))

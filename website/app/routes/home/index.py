@@ -46,7 +46,7 @@ def index():
     random_quote = random.choice(quotes)
 
     return render_template(
-        'index.html',
+        '/home/index.html',
         age=current_age,
         born_day=born_day,
         quote=random_quote,
@@ -76,7 +76,7 @@ def index_es():
     random_quote = random.choice(quotes)
 
     return render_template(
-        '/es/index.html',
+        '/home/es/index.html',
         age=current_age,
         born_day=born_day,
         quote=random_quote,

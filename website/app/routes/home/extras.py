@@ -68,8 +68,8 @@ underground_videos = [
 
 @home_bp.route('/extras')
 def extras():
-    return render_template('extras.html', playlists=_get_random_playlists(), underground_videos=underground_videos)
+    return render_template('/home/extras.html', playlists=_get_random_playlists(), underground_videos=underground_videos)
 
 @home_bp.route('/es/extras')
 def extras_es():
-    return render_template('/es/extras.html', playlists=_get_random_playlists(), underground_videos=underground_videos)
+    return render_template('/home/es/extras.html', playlists=_get_random_playlists(), underground_videos=underground_videos)
