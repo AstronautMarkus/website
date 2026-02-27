@@ -1,8 +1,25 @@
+{% set philosophy_routes = [
+{
+'endpoint_en': 'philosophy.why_static',
+'endpoint_es': 'philosophy.why_static_es',
+'label_en': 'Why a Static Site?',
+'label_es': '¿Por Qué un Sitio Estático?'
+},
+{
+'endpoint_en': 'philosophy.why_not_frameworks',
+'endpoint_es': 'philosophy.why_not_frameworks_es',
+'label_en': 'Why Not Frameworks?',
+'label_es': '¿Por Qué No Frameworks?'
+}
+] %}
+
 {% extends "layout/base.html" %}
 
 {% block title %}Filosofía - Marcos Reyes{% endblock %}
-{% block description %}Conocimiento e insights sobre la filosofía detrás del trabajo y sitio web personal de Marcos Reyes.{% endblock %}
-{% block keywords %}filosofía, Marcos Reyes, sitio personal, desarrollo web, recursos, viaje del desarrollador{% endblock %}
+{% block description %}Conocimiento e insights sobre la filosofía detrás del trabajo y sitio web personal de Marcos
+Reyes.{% endblock %}
+{% block keywords %}filosofía, Marcos Reyes, sitio personal, desarrollo web, recursos, viaje del desarrollador{%
+endblock %}
 
 {% block content %}
 <h1>Filosofía</h1>
@@ -10,6 +27,10 @@
 
 <div class="container">
     <h3>Enlaces de Recursos</h3>
-    <a href="{{ url_for('philosophy.why_static') }}" class="route-button">¿Por qué un Sitio Estático?</a>
+    {% for item in philosophy_routes %}
+    <a href="{{ url_for(item.endpoint_es if is_spanish else item.endpoint_en) }}" class="route-button philosophy-button">
+        {{ item.label_es if is_spanish else item.label_en }}
+    </a>
+    {% endfor %}
 </div>
 {% endblock %}

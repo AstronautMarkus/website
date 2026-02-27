@@ -1,3 +1,18 @@
+{% set philosophy_routes = [
+{
+'endpoint_en': 'philosophy.why_static',
+'endpoint_es': 'philosophy.why_static_es',
+'label_en': 'Why a Static Site?',
+'label_es': '¿Por Qué un Sitio Estático?'
+},
+{
+'endpoint_en': 'philosophy.why_not_frameworks',
+'endpoint_es': 'philosophy.why_not_frameworks_es',
+'label_en': 'Why Not Frameworks?',
+'label_es': '¿Por Qué No Frameworks?'
+}
+] %}
+
 {% extends "layout/base.html" %}
 
 {% block title %}Philosophy - Marcos Reyes{% endblock %}
@@ -12,6 +27,10 @@ endblock %}
 
 <div class="container">
     <h3>Resources Links</h3>
-    <a href="{{ url_for('philosophy.why_static') }}" class="route-button">Why a Static Site?</a>
+    {% for item in philosophy_routes %}
+    <a href="{{ url_for(item.endpoint_es if is_spanish else item.endpoint_en) }}" class="route-button philosophy-button">
+        {{ item.label_es if is_spanish else item.label_en }}
+    </a>
+    {% endfor %}
 </div>
 {% endblock %}
