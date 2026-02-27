@@ -6,4 +6,5 @@ from . import (
     index,
     why_static,
     why_not_frameworks,
+    why_i_build,
 )
