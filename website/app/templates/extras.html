@@ -6,15 +6,15 @@
 
 {% block content %}
 <h1>Extras</h1>
-<p>Check out these extra content related to Marcos Reyes and my homies!</p>
+<p>Extra content that I like it or only I want to leave here.</p>
 
 <div class="container">
     <h3>Youtube Songs</h3>
-    {% for playlist in playlists %}
-        <div class="playlist-embed">
+    <div class="playlist-embed">
+        {% for playlist in playlists %}
             {{ playlist.iframe | safe }}
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>
 
 <div class="container">
