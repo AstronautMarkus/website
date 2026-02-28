@@ -26,5 +26,14 @@
     {% endfor %}
 </div>
 
+<div class="container">
+    <h3>ASCII Art</h3>
+    <div class="ascii-art-grid">
+        {% for art in ascii_arts %}
+            <pre class="ascii-code-block"><span class="ascii-code-label">ascii_art_{{ loop.index }}.txt</span>{{ art }}</pre>
+        {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %}
