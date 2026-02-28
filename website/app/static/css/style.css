@@ -185,6 +185,78 @@ a {
   transform: scale(1.05);
 }
 
+.social-media-button {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.social-media-button:hover {
+  color: #ffffff;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+.instagram-button {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  border: 2px solid #833ab4;
+  border-top-color: #fcb045;
+  border-left-color: #fcb045;
+  border-right-color: #833ab4;
+  border-bottom-color: #833ab4;
+  box-shadow: 0 0 8px rgba(252, 176, 69, 0.55);
+}
+
+.instagram-button:hover {
+  background: linear-gradient(135deg, #fcb045, #fd1d1d, #833ab4);
+  box-shadow: 0 0 15px rgba(253, 29, 29, 0.85), 0 0 8px rgba(131, 58, 180, 0.65);
+}
+
+.github-button {
+  background: linear-gradient(135deg, #24292f, #3a3f46, #57606a);
+  border: 2px solid #24292f;
+  border-top-color: #8b949e;
+  border-left-color: #8b949e;
+  border-right-color: #24292f;
+  border-bottom-color: #24292f;
+  box-shadow: 0 0 8px rgba(139, 148, 158, 0.45);
+}
+
+.github-button:hover {
+  background: linear-gradient(135deg, #57606a, #3a3f46, #24292f);
+  box-shadow: 0 0 14px rgba(139, 148, 158, 0.8), 0 0 8px rgba(36, 41, 47, 0.75);
+}
+
+.gitlab-button {
+  background: linear-gradient(135deg, #fc6d26, #e24329, #554488);
+  border: 2px solid #e24329;
+  border-top-color: #fc6d26;
+  border-left-color: #fc6d26;
+  border-right-color: #554488;
+  border-bottom-color: #554488;
+  box-shadow: 0 0 8px rgba(252, 109, 38, 0.55);
+}
+
+.gitlab-button:hover {
+  background: linear-gradient(135deg, #fc6d26, #fca326, #554488);
+  box-shadow: 0 0 15px rgba(252, 109, 38, 0.85), 0 0 8px rgba(85, 68, 136, 0.65);
+}
+
+.linkedin-button {
+  background: linear-gradient(135deg, #0a66c2, #0077b5, #00a0dc);
+  border: 2px solid #0a66c2;
+  border-top-color: #00a0dc;
+  border-left-color: #00a0dc;
+  border-right-color: #0a66c2;
+  border-bottom-color: #0a66c2;
+  box-shadow: 0 0 8px rgba(0, 160, 220, 0.55);
+}
+
+.linkedin-button:hover {
+  background: linear-gradient(135deg, #00a0dc, #0077b5, #0a66c2);
+  box-shadow: 0 0 15px rgba(0, 160, 220, 0.85), 0 0 8px rgba(10, 102, 194, 0.7);
+}
+
 table {
   width: 100%;
   border-collapse: separate;
