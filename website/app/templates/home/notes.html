@@ -59,6 +59,8 @@ to hear from you. Your notes will be displayed here for everyone to see.{% endbl
                 placeholder="Write what do you want.."></textarea>
         </div>
 
+        <div class="cf-turnstile" style="display: flex; justify-content: center;" data-sitekey="{{ turnstile_site_key }}" data-language="en"></div>
+
         <div class="notes-form-actions">
             <label for="anonymous" class="inline-checkbox">
                 <input type="checkbox" id="anonymous" name="anonymous" value="true" checked>
@@ -68,5 +70,7 @@ to hear from you. Your notes will be displayed here for everyone to see.{% endbl
         </div>
     </form>
 </div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 {% endblock %}

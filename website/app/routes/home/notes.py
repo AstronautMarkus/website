@@ -1,4 +1,7 @@
 import random
+import json
+from urllib import parse as urlparse, request as urlrequest
+from urllib.error import HTTPError, URLError
 from flask import render_template, request, redirect, url_for, flash, current_app
 from sqlalchemy.exc import SQLAlchemyError
 from app import db
@@ -42,6 +45,7 @@ def _get_notes_messages(locale='en'):
             'long_content': 'El contenido debe tener máximo 200 caracteres.',
             'long_username': 'El nombre debe tener máximo 20 caracteres.',
             'missing_ip': 'No fue posible detectar tu IP. Intenta de nuevo.',
+            'captcha_error': 'Completa la verificación de seguridad para continuar.',
             'success': 'Nota agregada correctamente.',
             'db_error': 'Ocurrió un error al guardar la nota. Intenta de nuevo.',
         }
@@ -51,9 +55,82 @@ def _get_notes_messages(locale='en'):
         'long_content': 'Note content must be 200 characters or less.',
         'long_username': 'Username must be 20 characters or less.',
         'missing_ip': 'Unable to detect your IP address. Please try again.',
+        'captcha_error': 'Please complete the security verification to continue.',
         'success': 'Note added successfully!',
         'db_error': 'An error occurred while adding the note. Please try again.',
     }
+
+
+def _turnstile_verify_request(payload):
+    data = urlparse.urlencode(payload).encode('utf-8')
+    verification_url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+    http_request = urlrequest.Request(verification_url, data=data, method='POST')
+    http_request.add_header('Content-Type', 'application/x-www-form-urlencoded')
+
+    try:
+        with urlrequest.urlopen(http_request, timeout=8) as response:
+            return True, response.status, json.loads(response.read().decode('utf-8'))
+    except HTTPError as error:
+        error_body = ''
+        try:
+            error_body = error.read().decode('utf-8')
+        except Exception:
+            pass
+
+        error_payload = {}
+        if error_body:
+            try:
+                error_payload = json.loads(error_body)
+            except ValueError:
+                error_payload = {'raw': error_body}
+
+        return False, error.code, error_payload
+    except (URLError, TimeoutError, ValueError):
+        current_app.logger.exception('Turnstile verification request failed')
+        return False, None, {}
+
+
+def verify_turnstile_token(token, remote_ip=None):
+    secret_key = (current_app.config.get('TURNSTILE_SECRET_KEY') or '').strip()
+    if not secret_key:
+        current_app.logger.warning('Turnstile verification skipped: TURNSTILE_SECRET_KEY is not configured')
+        return False
+
+    if not token:
+        return False
+
+    if remote_ip and ',' in remote_ip:
+        remote_ip = remote_ip.split(',', 1)[0].strip()
+
+    payload = {
+        'secret': secret_key,
+        'response': token,
+    }
+    if remote_ip:
+        payload['remoteip'] = remote_ip
+
+    request_ok, status_code, verification_result = _turnstile_verify_request(payload)
+
+    if not request_ok and status_code == 400 and 'remoteip' in payload:
+        current_app.logger.warning('Turnstile returned HTTP 400 with remoteip, retrying without remoteip')
+        payload.pop('remoteip', None)
+        request_ok, status_code, verification_result = _turnstile_verify_request(payload)
+
+    if not request_ok:
+        error_codes = verification_result.get('error-codes') if isinstance(verification_result, dict) else None
+        if isinstance(error_codes, list) and 'invalid-input-secret' in error_codes:
+            current_app.logger.error(
+                'Turnstile secret key is invalid. Verify TURNSTILE_SECRET_KEY (use Secret key, not Site key, for the same widget/environment).'
+            )
+        current_app.logger.warning('Turnstile verification failed with HTTP %s (error-codes=%s)', status_code, error_codes)
+        return False
+
+    is_success = bool(verification_result.get('success'))
+    if not is_success:
+        error_codes = verification_result.get('error-codes')
+        current_app.logger.info('Turnstile token rejected (error-codes=%s)', error_codes)
+
+    return is_success
 
 
 def _is_anonymous_selected(username, anonymous_flag):
@@ -91,11 +168,13 @@ def _notes_handler(locale='en'):
     messages = _get_notes_messages(locale)
     template_path = 'home/es/notes.html' if is_spanish else 'home/notes.html'
     redirect_endpoint = 'home.es_notes' if is_spanish else 'home.notes'
+    turnstile_site_key = (current_app.config.get('TURNSTILE_SITE_KEY') or '').strip()
 
     if request.method == 'POST':
         content = (request.form.get('content') or '').strip()
         raw_username = request.form.get('username', '').strip()
         raw_anonymous_flag = request.form.get('anonymous', '')
+        turnstile_token = request.form.get('cf-turnstile-response', '').strip()
 
         if not content:
             flash(messages['empty_content'], 'danger')
@@ -112,6 +191,10 @@ def _notes_handler(locale='en'):
         ip_address = request.remote_addr
         if not ip_address:
             flash(messages['missing_ip'], 'danger')
+            return redirect(url_for(redirect_endpoint))
+
+        if not turnstile_token or not verify_turnstile_token(turnstile_token, ip_address):
+            flash(messages['captcha_error'], 'danger')
             return redirect(url_for(redirect_endpoint))
 
         is_anonymous = _is_anonymous_selected(raw_username, raw_anonymous_flag)
@@ -146,7 +229,12 @@ def _notes_handler(locale='en'):
         .order_by(Note.created_at.desc())
         .all()
     )
-    return render_template(template_path, notes=notes, smilleys=SMILLEYS)
+    return render_template(
+        template_path,
+        notes=notes,
+        smilleys=SMILLEYS,
+        turnstile_site_key=turnstile_site_key,
+    )
 
 @home_bp.route('/notes', methods=['GET', 'POST'])
 def notes():

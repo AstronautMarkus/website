@@ -56,6 +56,8 @@ leerte. Tus notas se mostrarán aquí para que todos las vean.{% endblock %}
             <textarea id="content" name="content" maxlength="200" required placeholder="Escribe lo que quieras..."></textarea>
         </div>
 
+        <div class="cf-turnstile" style="display: flex; justify-content: center;" data-sitekey="{{ turnstile_site_key }}" data-language="es"></div>
+
         <div class="notes-form-actions">
             <label for="anonymous" class="inline-checkbox">
                 <input type="checkbox" id="anonymous" name="anonymous" value="true" checked>
@@ -65,5 +67,7 @@ leerte. Tus notas se mostrarán aquí para que todos las vean.{% endblock %}
         </div>
     </form>
 </div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 {% endblock %}
