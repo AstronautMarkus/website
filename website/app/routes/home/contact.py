@@ -76,12 +76,16 @@ def submit_contact_message():
             if locale == 'es'
             else 'Thanks for reaching out! I will review your message and get back to you soon.'
         )
+        dont_respond = ('No respondas a este correo, es solo una confirmación automática. -AstroBot' 
+            if locale == 'es' 
+            else 'Do not reply to this email, it is just an automatic confirmation. -AstroBot')
 
         confirmation_html = render_template(
             'emails/email_response_template.html',
             title=confirmation_title,
             description=confirmation_description,
             year=current_year,
+            dont_respond=dont_respond
         )
 
         user_subject = 'Confirmación de contacto' if locale == 'es' else 'Contact confirmation'
