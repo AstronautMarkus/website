@@ -1,7 +1,15 @@
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parents[2]
+load_dotenv(dotenv_path=BASE_DIR / '.env')
+
+
+def to_bool(value, default=False):
+    if value is None:
+        return default
+    return str(value).strip().lower() in {'1', 'true', 'yes', 'on'}
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'mysecretkey')
@@ -17,7 +25,16 @@ class Config:
     MAIL_SERVER = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
     MAIL_PORT = int(os.getenv('MAIL_PORT', 587))
     MAIL_TIMEOUT = float(os.getenv('MAIL_TIMEOUT', 10))
-    MAIL_USE_TLS = os.getenv('MAIL_USE_TLS', 'true').strip().lower() in {'1', 'true', 'yes', 'on'}
-    MAIL_USE_SSL = os.getenv('MAIL_USE_SSL', 'false').strip().lower() in {'1', 'true', 'yes', 'on'}
+    MAIL_USE_TLS = to_bool(os.getenv('MAIL_USE_TLS', 'true'))
+    MAIL_USE_SSL = to_bool(os.getenv('MAIL_USE_SSL', 'false'))
+
+    if MAIL_PORT == 465 and not MAIL_USE_SSL:
+        MAIL_USE_SSL = True
+        MAIL_USE_TLS = False
+    elif MAIL_PORT == 587 and not MAIL_USE_TLS:
+        MAIL_USE_TLS = True
+        MAIL_USE_SSL = False
+
     MAIL_USERNAME = os.getenv('MAIL_USERNAME')
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+    MAIL_DEFAULT_SENDER = MAIL_USERNAME
