@@ -18,6 +18,22 @@ NOTE_COLORS = [
     'palegreen',
 ]
 
+SMILLEYS = [
+    'hi.gif',
+    'hunter.gif',
+    'jester.gif',
+    'laugh3.gif',
+    'lazy.gif',
+    'music.gif',
+    'negative.gif',
+    'neo.gif',
+    'paladin.gif',
+    'read.gif',
+    'sun_bespectacled.gif',
+    'superman.gif',
+    'yahoo.gif'
+]
+
 
 def _get_notes_messages(locale='en'):
     if locale == 'es':
@@ -130,7 +146,7 @@ def _notes_handler(locale='en'):
         .order_by(Note.created_at.desc())
         .all()
     )
-    return render_template(template_path, notes=notes)
+    return render_template(template_path, notes=notes, smilleys=SMILLEYS)
 
 @home_bp.route('/notes', methods=['GET', 'POST'])
 def notes():

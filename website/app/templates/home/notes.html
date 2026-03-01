@@ -31,7 +31,10 @@ to hear from you. Your notes will be displayed here for everyone to see.{% endbl
                 <div class="note-card-header">
                     <strong>Note</strong>
                 </div>
-                <span class="note-card-title" style="color: {{ note.color }}; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">{{ note.username }} Says:</span>
+                <span class="note-card-title"
+                    style="color: {{ note.color }}; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">{{
+                    note.username }} Says:</span>
+                <img src="{{ url_for('static', filename='img/smilleys/' ~ (smilleys | random)) }}" alt="Smiley note icon">
                 <p class="note-card-content">{{ note.content }}</p>
                 <small class="note-card-date">{{ note.created_at }}</small>
             </li>
@@ -52,7 +55,8 @@ to hear from you. Your notes will be displayed here for everyone to see.{% endbl
 
         <div>
             <label for="content">Message:</label>
-            <textarea id="content" name="content" maxlength="200" required placeholder="Write what do you want.."></textarea>
+            <textarea id="content" name="content" maxlength="200" required
+                placeholder="Write what do you want.."></textarea>
         </div>
 
         <div class="notes-form-actions">

@@ -32,6 +32,7 @@ leerte. Tus notas se mostrarán aquí para que todos las vean.{% endblock %}
                     <strong>Nota</strong>
                 </div>
                 <span class="note-card-title" style="color: {{ note.color }}; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">{{ note.username }} Dice:</span>
+                <img src="{{ url_for('static', filename='img/smilleys/' ~ (smilleys | random)) }}" alt="Ícono smiley de nota">
                 <p class="note-card-content">{{ note.content }}</p>
                 <small class="note-card-date">{{ note.created_at }}</small>
             </li>

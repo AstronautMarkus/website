@@ -596,6 +596,9 @@ input[type="radio"] {
   box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #606060;
   padding: 0;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  align-items: start;
 }
 
 .note-card-title {
@@ -603,6 +606,7 @@ input[type="radio"] {
   padding: 8px 10px 0;
   font-size: 14px;
   font-weight: bold;
+  grid-column: 1 / -1;
 }
 
 .note-card-header {
@@ -612,11 +616,19 @@ input[type="radio"] {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  grid-column: 1 / -1;
+}
+
+.note-card img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin: 10px 0 8px 10px;
 }
 
 .note-card-content {
   margin: 0;
-  padding: 12px 10px 8px;
+  padding: 10px 10px 8px;
   font-size: 13px;
   line-height: 1.4;
   white-space: pre-wrap;
@@ -628,4 +640,5 @@ input[type="radio"] {
   padding: 0 10px 12px;
   font-size: 11px;
   color: #2a2a2a;
+  grid-column: 1 / -1;
 }
