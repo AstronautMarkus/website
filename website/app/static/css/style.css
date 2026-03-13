@@ -138,6 +138,13 @@ a:hover {
   text-decoration: underline;
 }
 
+.route-icon {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 6px;
+  pointer-events: none;
+}
 
 .route-button {
   display: inline-block;
