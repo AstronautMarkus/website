@@ -1,7 +1,6 @@
 from flask import render_template
 from . import home_bp
 from datetime import datetime
-import random
 
 
 def _calculate_current_age(birth_date_str: str, date_format: str = '%Y-%m-%d') -> int:
@@ -32,13 +31,11 @@ def index():
         "NOW IS YOUR CHANCE TO BE A BIG SHOT!"
     ]
 
-    random_quote = random.choice(quotes)
-
     return render_template(
         '/home/index.html',
         age=current_age,
         born_day=born_day,
-        quote=random_quote
+        quotes=quotes
     )
 
 @home_bp.route('/es')
@@ -57,11 +54,9 @@ def index_es():
         "NO IMPORTA A DÓNDE VAYAS, TODOS ESTÁN CONECTADOS."
     ]
 
-    random_quote = random.choice(quotes)
-
     return render_template(
         '/home/es/index.html',
         age=current_age,
         born_day=born_day,
-        quote=random_quote
+        quotes=quotes
     )

@@ -102,8 +102,41 @@ button:active {
 }
 
 .marquee {
-  color: #ff6a00;
+  width: min(850px, 94vw);
+  margin: 14px auto 0;
+  padding: 8px 0;
+  overflow: hidden;
+  border: 2px solid #8f8fa8;
+  border-top-color: #dedee8;
+  border-left-color: #dedee8;
+  border-right-color: #595968;
+  border-bottom-color: #595968;
+  background: black;
+  box-shadow: inset 1px 1px 0 #ffffff22, inset -1px -1px 0 #00000066;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  white-space: nowrap;
+  color: #22ff00;
   font-weight: bold;
+  letter-spacing: 0.3px;
+  text-shadow: 1px 1px 0 #3a1a00;
+}
+
+.marquee-text.is-animating {
+  animation: marquee-cycle var(--marquee-duration, 14s) linear forwards;
+}
+
+@keyframes marquee-cycle {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .profile-picture {

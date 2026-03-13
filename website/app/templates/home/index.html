@@ -16,7 +16,9 @@ Docker{% endblock %}
   <img src="{{ url_for('utils.visitor_counter') }}" alt="Visitor Counter">
 </div>
 
-<marquee class="marquee">{{ quote }}</marquee>
+<div class="marquee" id="quote-marquee" data-quotes='{{ quotes | tojson }}'>
+  <span class="marquee-text"></span>
+</div>
 
 <div class="container">
   <img src="{{ url_for('static', filename='img/profile.webp') }}" class="profile-picture" alt="Website Art">
